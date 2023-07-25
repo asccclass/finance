@@ -2,9 +2,16 @@
 <html lang="{{ site.LanguageCode }}">
     {{- partial "head.html" . -}}
 <body>
-   {{- partial "header.html" . -}}
    <div class="container">
-      {{- block "main" . }}{{- end }}
+      {{- partial "header.html" . -}}
+      <!-- Main Content -->
+      <main>
+         {{- block "main" . }}{{- end }}
+      </main>
+      <!-- End of Main Content -->
+      <!-- Right Section -->
+      <div class="right-section">
+      </div>
    </div>
    {{- partial "footer.html" . -}}
    {{- partial "script.html" . -}}
