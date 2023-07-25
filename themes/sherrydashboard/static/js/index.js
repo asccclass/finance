@@ -18,7 +18,7 @@ darkMode.addEventListener('click', () => {
     darkMode.querySelector('span:nth-child(2)').classList.toggle('active');
 })
 
-
+/*
 Orders.forEach(order => {
     const tr = document.createElement('tr');
     const trContent = `
@@ -31,5 +31,6 @@ Orders.forEach(order => {
     tr.innerHTML = trContent;
     document.querySelector('table tbody').appendChild(tr);
 });
+*/
 
 darkMode.click();
