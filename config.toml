@@ -6,6 +6,9 @@ defaultContentLanguage = "zh_TW"
 
 theme = "sherrydashboard"
 
+[languages.zh_TW] 
+   languageCode = "zh_TW"
+
 [menu]
   [[menu.main]]
     name = "Home"
