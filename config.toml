@@ -8,9 +8,9 @@ theme = "sherrydashboard"
 uglyURLs = false  #ugly:content/about.md=>https://example.org/about.html
 
 [outputs]
-   home = ["HTML", "RSS", "PRINT"]
-   page = ["HTML", "RSS", "PRINT"]
-   section = ["HTML", "RSS", "PRINT" ]
+   home = ["HTML", "RSS"]
+   page = ["HTML", "RSS"]
+   section = ["HTML", "RSS"]
 
 [languages.zh_TW] 
    languageCode = "zh_TW"
