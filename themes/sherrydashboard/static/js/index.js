@@ -19,6 +19,8 @@ darkMode.addEventListener('click', () => {
 })
 
 /*
+ *  表格範例
+*/
 Orders.forEach(order => {
     const tr = document.createElement('tr');
     const trContent = `
@@ -31,6 +33,5 @@ Orders.forEach(order => {
     tr.innerHTML = trContent;
     document.querySelector('table tbody').appendChild(tr);
 });
-*/
 
 darkMode.click();
