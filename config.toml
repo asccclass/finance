@@ -5,6 +5,7 @@ title = "Sherry Dashboard Site"
 defaultContentLanguage = "zh_TW"
 
 theme = "sherrydashboard"
+uglyURLs = false  #ugly:content/about.md=>https://example.org/about.html
 
 [languages.zh_TW] 
    languageCode = "zh_TW"
