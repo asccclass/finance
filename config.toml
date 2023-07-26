@@ -1,4 +1,5 @@
-baseURL = "http://example.org/"
+baseURL = "https://asccclass.github.io/finance/"
+canonifyurls = true
 languageCode = "zh_TW"
 title = "Sherry Dashboard Site"
 
