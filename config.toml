@@ -25,3 +25,8 @@ theme = "sherrydashboard"
     pre = "mail_outline"
     url = "/tags/"
     weight = 3
+  [[menu.main]]
+    name = "Logout"
+    pre = "logout"
+    url = "/"
+    weight = 9
