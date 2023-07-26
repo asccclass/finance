@@ -12,6 +12,11 @@ uglyURLs = false  #ugly:content/about.md=>https://example.org/about.html
    page = ["HTML", "RSS"]
    section = ["HTML", "RSS"]
 
+[module]
+   [[module.mounts]]
+      source = 'content'
+      target = 'content'
+
 [languages.zh_TW] 
    languageCode = "zh_TW"
 
