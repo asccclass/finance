@@ -11,17 +11,17 @@ theme = "sherrydashboard"
 
 [menu]
   [[menu.main]]
-    name = "Home"
+    name = "首頁"
     pre = "home"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "Posts"
-    pre = "pen-tool"
+    name = "文章"
+    pre = "receipt_long"
     url = "/posts/"
     weight = 2
   [[menu.main]]
-    name = "Tags"
-    pre = "tag"
+    name = "標籤"
+    pre = "mail_outline"
     url = "/tags/"
     weight = 3
