@@ -9,8 +9,8 @@ uglyURLs = false  #ugly:content/about.md=>https://example.org/about.html
 
 [outputs]
    home = ["HTML", "RSS", "SEARCH", "SEARCHPAGE"]
-   section = ["HTML", "RSS", "PRINT" ]
    page = ["HTML", "RSS", "SEARCH", "PRINT"]
+   # section = ["HTML", "RSS", "PRINT" ]
 
 [languages.zh_TW] 
    languageCode = "zh_TW"
