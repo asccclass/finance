@@ -1,5 +1,5 @@
 {{ define "main" }}
-   <h1>{{ .Title }}</h1>
+   <h1>{{.Title}}</h1>
    <!-- Analyses -->
    <div class="analyse">
       <div class="sales">
@@ -19,41 +19,41 @@
          </div>
       </div>
       <div class="visits">
-                    <div class="status">
-                        <div class="info">
-                            <h3>Site Visit</h3>
-                            <h1>24,981</h1>
-                        </div>
-                        <div class="progresss">
-                            <svg>
-                                <circle cx="38" cy="38" r="36"></circle>
-                            </svg>
-                            <div class="percentage">
-                                <p>-48%</p>
-                            </div>
-                        </div>
-                    </div>
+         <div class="status">
+            <div class="info">
+               <h3>Site Visit</h3>
+               <h1>24,981</h1>
+            </div>
+            <div class="progresss">
+               <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+               </svg>
+               <div class="percentage">
+                  <p>-48%</p>
+               </div>
+            </div>
+         </div>
       </div>
       <div class="searches">
-                    <div class="status">
-                        <div class="info">
-                            <h3>Searches</h3>
-                            <h1>14,147</h1>
-                        </div>
-                        <div class="progresss">
-                            <svg>
-                                <circle cx="38" cy="38" r="36"></circle>
-                            </svg>
-                            <div class="percentage">
-                                <p>+21%</p>
-                            </div>
-                        </div>
-                    </div>
+         <div class="status">
+            <div class="info">
+               <h3>Searches</h3>
+               <h1>14,147</h1>
+            </div>
+            <div class="progresss">
+               <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+               </svg>
+               <div class="percentage">
+                  <p>+21%</p>
+               </div>
+            </div>
+         </div>
       </div>
    </div>
    <!-- End of Analyses -->
    <!-- New Users Section -->
-            <div class="new-users">
+   <div class="new-users">
                 <h2>New Users</h2>
                 <div class="user-list">
                     <div class="user">
@@ -97,5 +97,5 @@
                 <a href="#">Show All</a>
             </div>
             <!-- End of Recent Orders -->
-{{ .Content }}
+{{.Content}}
 {{ end }}
