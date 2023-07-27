@@ -1,3 +1,7 @@
+---
+title: "測試用首頁內容"
+---
+
 這是測試用的首頁 sed do eiusmod tempor 
 incididunt ut labore et dolore magna aliqua. Pellentesque eu tincidunt tortor 
 aliquam nulla facilisi cras fermentum odio. A erat nam at lectus urna duis. 
@@ -6,8 +10,6 @@ tellus. Diam sit amet nisl suscipit adipiscing bibendum est. Sed felis eget
 velit aliquet sagittis id consectetur. Vulputate dignissim suspendisse in est 
 ante in nibh mauris cursus. Morbi quis commodo odio aenean. Mollis nunc sed id 
 semper risus in hendrerit gravida rutrum.
-
-<!--more-->
 
 Ac ut consequat semper viverra nam. Hac habitasse platea dictumst vestibulum 
 rhoncus. Amet porttitor eget dolor morbi non. Justo eget magna fermentum 
@@ -19,3 +21,4 @@ suspendisse potenti nullam ac. Tincidunt id aliquet risus feugiat in. Varius
 quam quisque id diam vel. Egestas erat imperdiet sed euismod nisi. Scelerisque 
 felis imperdiet proin fermentum leo vel orci porta non. Ut faucibus pulvinar 
 elementum integer. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl.
+
