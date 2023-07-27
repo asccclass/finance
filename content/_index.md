@@ -2,6 +2,8 @@
 title: "測試用首頁內容"
 draft: true
 ---
+# 測試用首頁內容
+{{< _index >}}
 這是測試用的首頁 sed do eiusmod tempor 
 incididunt ut labore et dolore magna aliqua. Pellentesque eu tincidunt tortor 
 aliquam nulla facilisi cras fermentum odio. A erat nam at lectus urna duis. 
