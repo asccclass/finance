@@ -1,7 +1,7 @@
 baseURL = "https://asccclass.github.io/finance/"
 canonifyurls = true
 languageCode = "zh_TW"
-title = "Sherry Dashboard Site"
+title = "Personal Finance Dashboard"
 
 defaultContentLanguage = "zh_TW"
 
@@ -23,20 +23,30 @@ uglyURLs = false  #ugly:content/about.md=>https://example.org/about.html
 
 [menu]
   [[menu.main]]
-    name = "首頁"
-    pre = "home"
+    name = "財務狀況一覽表"
+    pre = "dashboard"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "文章"
+    name = "支出"
     pre = "receipt_long"
-    url = "/posts/"
+    url = "/expenses/"
     weight = 2
   [[menu.main]]
-    name = "標籤"
-    pre = "mail_outline"
-    url = "/tags/"
+    name = "收入"
+    pre = "add"
+    url = "/revenue/"
     weight = 3
+  [[menu.main]]
+    name = "資產"
+    pre = "insights"
+    url = "/assets/"
+    weight = 4
+  [[menu.main]]
+    name = "負債"
+    pre = "report_gmailerrorred"
+    url = "/liabilities/"
+    weight = 5
   [[menu.main]]
     name = "Logout"
     pre = "logout"
