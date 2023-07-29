@@ -48,6 +48,11 @@ uglyURLs = false  #ugly:content/about.md=>https://example.org/about.html
     url = "/liabilities/"
     weight = 5
   [[menu.main]]
+    name = "投資"
+    pre = "insights"
+    url = "/invest/"
+    weight = 5
+  [[menu.main]]
     name = "Logout"
     pre = "logout"
     url = "/"
