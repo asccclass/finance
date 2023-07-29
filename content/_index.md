@@ -1,6 +1,7 @@
 ---
 title: "測試用首頁內容(md)"
-draft: true
+menu: "main"
+draft: "false"
 ---
 # 測試用首頁內容
 {{< _index >}}
