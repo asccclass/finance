@@ -1,7 +1,7 @@
 baseURL = "https://asccclass.github.io/finance/"
 canonifyurls = true
 languageCode = "zh_TW"
-title = "Personal Finance Dashboard"
+title = "My Finance Dashboard"
 
 defaultContentLanguage = "zh_TW"
 
