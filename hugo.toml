@@ -5,8 +5,8 @@ title = "My Finance Dashboard"
 
 defaultContentLanguage = "zh_TW"
 
-theme = "sherrydashboard"
-# theme = "hugoplate"
+#theme = "sherrydashboard"
+theme = "hugoplate"
 uglyURLs = false  #ugly:content/about.md=>https://example.org/about.html
 
 [outputs]
