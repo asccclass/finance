@@ -12,7 +12,7 @@
    <div class="sidebar">
       {{ range .Site.Menus.main }}
          {{ $text := print .Name | safeHTML }}
-text: {{ $text }} == {{ .Page.Params.selectedmenu }}
+text: {{ $text }} == {{ .Params.selectedmenu }}
          <a href="{{ .URL }}" class="{{ cond (eq .Params.selectedmenu $text) "active" ""}}">
          {{ if .Pre }}
             <span class="material-icons-sharp">{{ .Pre }}</span>
