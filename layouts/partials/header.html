@@ -9,11 +9,12 @@
          <span class="material-icons-sharp"> close </span>
       </div>
    </div>
+{{ .Patams }}
    <div class="sidebar">
       {{ range .Site.Menus.main }}
          {{ $text := print .Name | safeHTML }}
-text: {{ $text }} == {{ .Params.Selectedmenu }}
-         <a href="{{ .URL }}" class="{{ cond (eq .Params.Selectedmenu $text) "active" ""}}">
+text: {{ $text }} == {{ .Params.selectedmenu }}
+         <a href="{{ .URL }}" class="{{ cond (eq .Params.selectedmenu $text) "active" ""}}">
          {{ if .Pre }}
             <span class="material-icons-sharp">{{ .Pre }}</span>
          {{ end }}
