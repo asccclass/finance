@@ -10,10 +10,9 @@
       </div>
    </div>
 {{ .Params.Submenu }}
-{{ . }}
    <div class="sidebar">
       {{ range .Site.Menus.main }}
-         <a href="{{ .URL }}" class="">
+         <a href="{{ .URL }}" class="{{ cond(eq .Params.Selectedmenu .Name) 'active' ''">
          {{ if .Pre }}
             <span class="material-icons-sharp">{{ .Pre }}</span>
          {{ end }}

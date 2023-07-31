@@ -1,6 +1,6 @@
 ---
 title: "MyFinance Dashboard"
-submenu: "main"
+selectedmenu: "財務狀況一覽表"
 draft: "false"
 ---
 ### 測試用首頁內容
