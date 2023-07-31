@@ -9,7 +9,8 @@
          <span class="material-icons-sharp"> close </span>
       </div>
    </div>
-{{ .SUBMENU }}
+{{ . }}
+{{ .Site.Submenu }}
    <div class="sidebar">
       {{ range .Site.Menus.main }}
          <a href="{{ .URL }}" class="">
