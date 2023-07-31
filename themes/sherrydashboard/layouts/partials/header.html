@@ -9,13 +9,13 @@
          <span class="material-icons-sharp"> close </span>
       </div>
    </div>
-
+{{ .SUBMENU }}
    <div class="sidebar">
       {{ range .Site.Menus.main }}
-         <a href="{{ .URL }}">
-            {{ if .Pre }}
+         <a href="{{ .URL }}" class="">
+         {{ if .Pre }}
             <span class="material-icons-sharp">{{ .Pre }}</span>
-            {{ end }}
+         {{ end }}
             {{ $text := print .Name | safeHTML }}
             <h3>{{ $text }}</h3>
          </a>
