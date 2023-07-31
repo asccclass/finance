@@ -1,4 +1,6 @@
-# Hugo Dashboard Example
+# MyFinance 個人財務管理儀表板
+
+提供個人財務管理使用
 
 
 ## 參考資料
