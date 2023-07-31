@@ -51,7 +51,7 @@ uglyURLs = false  #ugly:content/about.md=>https://example.org/about.html
     name = "投資"
     pre = "insights"
     url = "/invest/"
-    weight = 5
+    weight = 6
   [[menu.main]]
     name = "Logout"
     pre = "logout"
