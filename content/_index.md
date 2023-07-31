@@ -1,5 +1,5 @@
 ---
-title: "測試用首頁內容(md)"
+title: "MyFinance Dashboard"
 menu: "main"
 draft: "false"
 ---
