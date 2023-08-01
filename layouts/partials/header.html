@@ -9,7 +9,7 @@
          <span class="material-icons-sharp"> close </span>
       </div>
    </div>
-{{ .Params }}
+{{ .Params.selectedmenu }}
    <div class="sidebar">
       {{ range .Site.Menus.main }}
          {{ $text := print .Name | safeHTML }}
