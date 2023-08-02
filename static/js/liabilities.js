@@ -1,4 +1,5 @@
 function drawTable(res) {
+console.log(res);
    res.forEach(order => {
       const tr = document.createElement('tr');
       const trContent = `
