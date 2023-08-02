@@ -1,4 +1,4 @@
-finction drawTable(res) {
+function drawTable(res) {
    res.forEach(order => {
       const tr = document.createElement('tr');
       const trContent = `
