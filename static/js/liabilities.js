@@ -1,6 +1,6 @@
 function drawTable(res) {
-console.log(res);
-   res.forEach(order => {
+   const obj = JSON.parse(res);
+   obj.forEach(order => {
       const tr = document.createElement('tr');
       const trContent = `
           <td>${order.bank}</td>
