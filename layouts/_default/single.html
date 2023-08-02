@@ -1,6 +1,5 @@
 {{ define "main" }}
    {{ $text := print .Content | safeHTML }}
-   <section id="main">
-      {{ $text }}
-   </section>
+   <h1>{{.Title}}</h1>
+   {{ $text }}
 {{ end }}
