@@ -9,7 +9,7 @@
             <circle cx="38" cy="38" r="36"></circle>
          </svg>
          <div class="percentage">
-            <p>{{ len(.details) / .period }} %</p>
+            <p>{{ (.details | len) / .period }} %</p>
          </div>
       </div>
    </div>
