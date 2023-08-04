@@ -7,10 +7,10 @@
       </div>
       <div class="progresss">
          <svg>
-            <circle cx="38" cy="38" r="16"></circle>
+            <circle cx="38" cy="18" r="36"></circle>
          </svg>
          <div class="percentage">
-            <p>{{ math.Floor (mul (div $s .period) 100) }} %</p>
+            <p>{{ 100 - (math.Floor (mul (div $s .period) 100)) }} %</p>
          </div>
       </div>
    </div>
