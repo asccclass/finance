@@ -4,12 +4,13 @@
    range .details
       $payed += .total
    end 
+   $x := sub .total $payed
 }}
 <div class="visits">
    <div class="status">
       <div class="info">
          <h3>{{ .bank }}</h3>
-         <h1>{{ lang.NumFmt 0 (sub .total $payed) "- . ," }}</h1>
+         <h1>{{ lang.NumFmt 0 $x "- . ," }}</h1>
       </div>
       <div class="progresss">
          <svg>
