@@ -10,7 +10,7 @@
             <circle cx="38" cy="18" r="36"></circle>
          </svg>
          <div class="percentage">
-            <p>{{ 100 - (math.Floor (mul (div $s .period) 100)) }} %</p>
+            <p>{{ sub 100 (math.Floor (mul (div $s .period) 100)) }} %</p>
          </div>
       </div>
    </div>
