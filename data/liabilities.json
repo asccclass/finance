@@ -3,9 +3,9 @@
    "bank": "土地銀行",
    "account": "004-1601-00320-000",
    "rate": "2.15%",
-   "total": "2800000",
-   "period": "240",
-   "year": "20",
+   "total": 2800000,
+   "period": 240,
+   "year": 20,
    "start": "2022-12-28",
    "details": [
       { "date": "2023-01-28", "period": "1", "principal": "9473", "interest": "4725", "total": "14198" },
@@ -21,9 +21,9 @@
    "bank": "國泰銀行",
    "account": "",
    "rate": "1.61%",
-   "total": "1100000",
-   "period": "84",
-   "year": "7",
+   "total": 1100000,
+   "period": 84,
+   "year": 7,
    "start": "2023-08-24",
    "details": [ 
    ]
