@@ -10,7 +10,7 @@
             <circle cx="38" cy="38" r="36"></circle>
          </svg>
          <div class="percentage">
-            <p>{{ div $s .period }} %</p>
+            <p>{{ mul (div $s .period) 100 }} %</p>
          </div>
       </div>
    </div>
