@@ -1,8 +1,6 @@
 {{ define "main" }}
-{{ 
-   $curIncome := $.Site.Data.curmonth 
-   $curIncomelen := $curIncome | len
-}}
+{{ $curIncome := $.Site.Data.curmonth }}
+{{ $curIncomelen := $curIncome | len }}
    <h1>{{.Title}}</h1>
    <!-- Analyses -->
    <div class="analyse">
