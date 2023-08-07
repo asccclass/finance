@@ -1,5 +1,4 @@
 function drawTable(res) {
-console.log(res);
    const obj = JSON.parse(res);
    $.each(obj, function(i, order) {
       order.payed = order.details.length;
