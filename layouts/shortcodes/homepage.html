@@ -1,6 +1,6 @@
 {{ define "main" }}
-{{ $curIncome := $.Site.Data.curmonth }}
-{{ $curIncomelen := $curIncome.income | len }}
+{{ $curIncome := $.Site.Data.curmonth.income }}
+{{ $curIncomelen := $curIncome | len }}
    <h1>{{.Title}}</h1>
    <!-- Analyses -->
    <div class="analyse">
@@ -8,7 +8,7 @@
          <div class="status">
            <div class="info">
               <h3>收入</h3>
-              <h1>{{ index $curIncome.income $curIncomelen }}</h1>
+              <h1>{{ index $curIncome $curIncomelen }}</h1>
            </div>
            <div class="progresss">
               <svg>
