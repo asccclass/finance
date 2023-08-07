@@ -1,54 +1,54 @@
 {{ $total := 0 }}
-<h1>{{.Name}}</h1>
+   <h1>{{.Name}}</h1>
    <!-- Analyses -->
    <div class="analyse">
    {{ range $.Site.Data.liabilities }}
       {{ partial "analysis.html" . }}	
    {{ end }}
    </div>
-   <!-- End of Analyses -->
-   <!-- New Users Section -->
-   <div class="new-users">
-      <h2>New Users</h2>
-      <div class="user-list">
-                    <div class="user">
-                        <img src="images/profile-2.jpg">
-                        <h2>Jack</h2>
-                        <p>54 Min Ago</p>
-                    </div>
-                    <div class="user">
-                        <img src="images/profile-3.jpg">
-                        <h2>Amir</h2>
-                        <p>3 Hours Ago</p>
-                    </div>
-                    <div class="user">
-                        <img src="images/profile-4.jpg">
-                        <h2>Ember</h2>
-                        <p>6 Hours Ago</p>
-                    </div>
-                    <div class="user">
-                        <img src="images/plus.png">
-                        <h2>More</h2>
-                        <p>New User</p>
-                    </div>
-      </div>
+<!-- End of Analyses -->
+<!-- New Users Section -->
+<div class="new-users">
+   <h2>New Users</h2>
+   <div class="user-list">
+                 <div class="user">
+                     <img src="images/profile-2.jpg">
+                     <h2>Jack</h2>
+                     <p>54 Min Ago</p>
+                 </div>
+                 <div class="user">
+                     <img src="images/profile-3.jpg">
+                     <h2>Amir</h2>
+                     <p>3 Hours Ago</p>
+                 </div>
+                 <div class="user">
+                     <img src="images/profile-4.jpg">
+                     <h2>Ember</h2>
+                     <p>6 Hours Ago</p>
+                 </div>
+                 <div class="user">
+                     <img src="images/plus.png">
+                     <h2>More</h2>
+                     <p>New User</p>
+                 </div>
    </div>
-   <!-- End of New Users Section -->
-   <!-- Recent Orders Table -->
-   <div class="recent-orders">
-                <h2>Recent Orders</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Course Name</th>
-                            <th>Course Number</th>
-                            <th>Payment</th>
-                            <th>Status</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-                <a href="#">Show All</a>
-   </div>
-   <!-- End of Recent Orders -->
+</div>
+<!-- End of New Users Section -->
+<!-- Recent Orders Table -->
+<div class="recent-orders">
+             <h2>Recent Orders</h2>
+             <table>
+                 <thead>
+                     <tr>
+                         <th>Course Name</th>
+                         <th>Course Number</th>
+                         <th>Payment</th>
+                         <th>期數</th>
+                         <th>已繳</th>
+                     </tr>
+                 </thead>
+                 <tbody></tbody>
+             </table>
+             <a href="#">Show All</a>
+</div>
+<!-- End of Recent Orders -->

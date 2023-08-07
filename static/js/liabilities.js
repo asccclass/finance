@@ -2,13 +2,14 @@ function drawTable(res) {
 console.log(res);
    const obj = JSON.parse(res);
    $.each(obj, function(i, order) {
+      order.payed = order.details.length;
       const tr = document.createElement('tr');
       const trContent = `
           <td>${order.bank}</td>
           <td>${order.total}</td>
           <td>${order.start}</td>
-          <td class="${order.status === 'Declined' ? 'danger' : order.status === 'Pending' ? 'warning' : 'primary'}">${order.year}</td>
-          <td class="primary">${order.period}</td>
+          <td class="${order.status === 'Declined' ? 'danger' : order.status === 'Pending' ? 'warning' : 'primary'}">${order.period}</td>
+          <td class="primary">${order.payed}</td>
       `;
       tr.innerHTML = trContent;
       document.querySelector('table tbody').appendChild(tr);
