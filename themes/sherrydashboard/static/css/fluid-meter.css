@@ -9,8 +9,8 @@
 }
 
 .meters .meter-container .meter {
-   width: 400px;
-   height: 400px;
+   width: 200px;
+   height: 200px;
 }
 
 .meters .meter-container .controls :first-child {
