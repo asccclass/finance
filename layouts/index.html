@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ $curIncome := $.Site.Data.curmonth.income }}
+{{ $curExpense := $.Site.Data.curmonth.expense }}
 {{ $curIncomelen := $curIncome.summary | len }}
    <h1>{{.Title}}</h1>
    <!-- Analyses -->
@@ -15,7 +16,7 @@
                 <circle cx="38" cy="38" r="36"></circle>
               </svg>
               <div class="percentage">
-                 <p>{{ $curIncome.increase }}%</p>
+                 <p>{{ $curIncome.increase }}</p>
               </div>
            </div>
          </div>
@@ -24,14 +25,14 @@
          <div class="status">
             <div class="info">
                <h3>本月支出</h3>
-               <h1>24,981</h1>
+               <h1>{{ $curExpense.total }}</h1>
             </div>
             <div class="progresss">
                <svg>
                   <circle cx="38" cy="38" r="36"></circle>
                </svg>
                <div class="percentage">
-                  <p>-48%</p>
+                  <p>{{ $curExpense.increase }}</p>
                </div>
             </div>
          </div>
@@ -52,7 +53,7 @@
             </div>
          </div>
       </div>
-      <div class="sales">
+      <div class="searches">
          <div class="status">
            <div class="info">
               <h3>應負帳款</h3>
