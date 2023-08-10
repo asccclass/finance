@@ -1,0 +1,18 @@
+.meters {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.meters .meter-container {
+   margin-right: 50px;
+   margin-bottom: 30px;
+}
+
+.meters .meter-container .meter {
+   width: 400px;
+   height: 400px;
+}
+
+.meters .meter-container .controls :first-child {
+   margin-right: 15px;
+}
