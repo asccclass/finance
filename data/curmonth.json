@@ -2,7 +2,7 @@
    "month": "08",
    "income": {
       "totol":  275747,
-      "increase": "25.4%",
+      "increase": "+ 25.4%",
       "summary": [
          {
             "title":"投資",
@@ -67,8 +67,14 @@
    },
    "expense": {
       "total": 102816,
-      "increase": "-79.6%",
+      "increase": "- 79.6%",
       "summary": [
       ]
+   },
+   "balance": {  
+      "total": "",
+      "inclase": "",
+      "summary": [
+      }
    }
 }
