@@ -59,7 +59,13 @@
    <!-- New Users Section -->
    <div class="new-users">
       <h2>月分配項目</h2>
-                <div class="user-list">
+      <div class="user-list">
+         <div class="meters">
+            <div id="meter-1" class="meter-container">
+               <div class="meter"></div>
+            </div>
+          </div>
+         <div id="target" style="width:500px;height:500px"></div>
                     <div class="user">
                         <img src="images/profile-2.jpg">
                         <h2>Jack</h2>
@@ -80,7 +86,7 @@
                         <h2>More</h2>
                         <p>New User</p>
                     </div>
-                </div>
+      </div>
    </div>
    <!-- End of New Users Section -->
    <!-- Recent Orders Table -->
@@ -102,4 +108,10 @@
                 <a href="#">Show All</a>
    </div>
    <!-- End of Recent Orders -->
+<script>
+const target = document.querySelector("#target");
+new cfmModule.CircularFluidMeter(target, {
+  initialProgress: 33,
+});
+</script>
 {{ end }}
