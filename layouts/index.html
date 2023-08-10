@@ -61,8 +61,8 @@
       <h2>月分配項目</h2>
       <div class="user-list">
          <div class="meters">
-            <div id="meter-1" class="meter-container">
-               <div class="meter"></div>
+            <div id="meter" class="meter-container">
+               <div id="meter-1" class="meter"></div>
             </div>
           </div>
       </div>
@@ -89,31 +89,8 @@
 <script>
 var fm = new FluidMeter();
     fm.init({
-      targetContainer: document.getElementById("meter"),
-      fillPercentage: 15,
-      options: {
-        fontFamily: "Raleway",
-        drawPercentageSign: false,
-        drawBubbles: true,
-        size: 200,
-        borderWidth: 10,
-        backgroundColor: "#e2e2e2",
-        foregroundColor: "#fafafa",
-        foregroundFluidLayer: {
-          fillStyle: "purple",
-          angularSpeed: 100,
-          maxAmplitude: 12,
-          frequency: 30,
-          horizontalSpeed: -150
-        },
-        backgroundFluidLayer: {
-          fillStyle: "pink",
-          angularSpeed: 100,
-          maxAmplitude: 9,
-          frequency: 30,
-          horizontalSpeed: 150
-        }
-      }
+      targetContainer: document.getElementById("meter-1"),
+      fillPercentage: 15
     });
 
 </script>
