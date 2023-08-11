@@ -13,6 +13,11 @@
    height: 200px;
 }
 
+.meters .meter-container h2 {
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+}
 .meters .meter-container .controls :first-child {
    margin-right: 15px;
 }
