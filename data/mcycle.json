@@ -1,8 +1,8 @@
 {
    "curMonth": "8",
    "mcycle": [
-      { "day": "01", "title": "撫養費", "mount": 12000, "icon": "request_quote", "bank": "807 永豐銀行", "account": "1000-1800-8157-69","isDone": false},
-      { "day": "01", "title": "儲蓄理財", "mount": 15900, "icon": "savings", "bank": "807 永豐銀行", "account": "006-004-005-2222-5","isDone": true},
+      { "day": "01", "title": "撫養費", "mount": 12000, "icon": "request_quote", "bank": "807 永豐銀行", "account": "1000-1800-8157-69","isDone": true},
+      { "day": "01", "title": "儲蓄理財", "mount": 15900, "icon": "savings", "bank": "807 永豐銀行", "account": "006-004-005-2222-5","isDone": false},
       { "day": "01", "title": "生活費", "mount": 31800, "icon": "credit_card", "bank": "812 台新銀行", "account": "288-817-000-925-74","isDone": false},
       { "day": "01", "title": "風險規劃預備金", "mount": 5300, "icon": "point_of_sale", "bank": "011 上海商銀", "account": "4320-3005-8021-35","isDone": true},
       { "day": "01", "title": "年度費用預存", "mount": 4141, "icon": "currency_exchange", "bank": "048 王道銀行", "account": "010-000-242-425-88","isDone": true},
