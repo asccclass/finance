@@ -1,5 +1,5 @@
 {{ define "main" }}
-   {{ $time := time (int now )}}
+   {{ $time := time (int now.Unix )}}
    {{ $curIncome := $.Site.Data.curmonth.income }}
    {{ $curExpense := $.Site.Data.curmonth.expense }}
    {{ $curBalance := $.Site.Data.curmonth.balance }}
