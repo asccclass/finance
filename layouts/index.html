@@ -65,6 +65,10 @@
                <div class="meter"></div>
                <h2>生活費（剩餘）</h2>
             </div>
+            <div id="meter-4" class="meter-container">
+               <div class="meter"></div>
+               <h2>投資理財（剩餘）</h2>
+            </div>
             <div id="meter-2" class="meter-container">
                <div class="meter"></div>
                <h2>年度費用（累積）</h2>
@@ -99,19 +103,22 @@
 const f = [];
 f.push({borderWidth:10,initialProgress:12436,maxProgress:31800,backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontFamily:"Codystar",fontSize:24,progressFormatter:i=>`${i.toFixed(0)}`,fluidConfiguration:{color:"#1e90ff"}});
 
-f.push({borderWidth:10,borderColor:"#567656",initialProgress:4140,maxProgress:49680,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>`${i.toFixed(1)}`,fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
+f.push({borderWidth:10,borderColor:"#567656",initialProgress:4140,maxProgress:49680,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>`${i.toFixed(0)}`,fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
 
-f.push({borderWidth:10,initialProgress:5300,maxProgress:63600,borderColor:"#2a2a2a",backgroundColor:"#270100",showBubbles:!1,fontSize:24,progressFormatter:i=>`${i.toFixed(2)}`,fluidConfiguration:{color:"#ff4500",horizontalSpeed:p.SLOW,waveSpeed:p.SLOW}});
+f.push({borderWidth:10,initialProgress:5300,maxProgress:63600,borderColor:"#2a2a2a",backgroundColor:"#270100",showBubbles:!1,fontSize:24,progressFormatter:i=>`${i.toFixed(0)}`,fluidConfiguration:{color:"#ff4500",horizontalSpeed:p.SLOW,waveSpeed:p.SLOW}});
 
-f.push({initialProgress:25,maxProgress:500,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,borderWidth:22,dropShadow:!1,padding:0,fontSize:34,progressFormatter:i=>`${i.toFixed(0)} / 500`,fluidConfiguration:{color:"#800080"}});f.push({borderWidth:22,initialProgress:23.2,padding:50,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:60,progressFormatter:i=>i.toFixed(1)+"%",fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});f.push({borderWidth:22,initialProgress:62,padding:50,backgroundColor:"#208000",borderColor:"#800060",showProgress:!1,showBubbles:!1,dropShadow:!1,use3D:!1,fluidConfiguration:{color:"#f8f8ff"}});const m=(i,t)=>{const s=new E(i.querySelector(".meter"),t),e=i.querySelector("input"),o=i.querySelector("button");return o==null||o.addEventListener("click",()=>{const h=Number(e==null?void 0:e.value);if(isNaN(h)){alert("invalid progress. Number between 0 and 100");return}s.progress=h}),s};
+f.push({initialProgress:0,maxProgress:15900,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,borderWidth:22,dropShadow:!1,padding:0,fontSize:34,progressFormatter:i=>`${i.toFixed(0)}`,fluidConfiguration:{color:"#800080"}});
+
+f.push({borderWidth:22,initialProgress:23.2,padding:50,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:60,progressFormatter:i=>i.toFixed(1)+"%",fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});f.push({borderWidth:22,initialProgress:62,padding:50,backgroundColor:"#208000",borderColor:"#800060",showProgress:!1,showBubbles:!1,dropShadow:!1,use3D:!1,fluidConfiguration:{color:"#f8f8ff"}});const m=(i,t)=>{const s=new E(i.querySelector(".meter"),t),e=i.querySelector("input"),o=i.querySelector("button");return o==null||o.addEventListener("click",()=>{const h=Number(e==null?void 0:e.value);if(isNaN(h)){alert("invalid progress. Number between 0 and 100");return}s.progress=h}),s};
 
 document.addEventListener("DOMContentLoaded",function(){
    m(document.querySelector("#meter-1"),f[0]);
    const i=m(document.querySelector("#meter-2"),f[1]);i.textShadowColor="#589100",i.textShadowOpacity=.4;
    const t=m(document.querySelector("#meter-3"),f[2]);t.dropShadowColor="#ff4500";
+   m(document.querySelector("#meter-4"),f[3]);
 });
 /*
-m(document.querySelector("#meter-4"),f[3]),m(document.querySelector("#meter-5"),f[4]),m(document.querySelector("#meter-6"),f[5])});
+m(document.querySelector("#meter-5"),f[4]),m(document.querySelector("#meter-6"),f[5])});
 */
 </script>
 {{ end }}
