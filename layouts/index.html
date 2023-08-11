@@ -1,5 +1,6 @@
 {{ define "main" }}
    {{ $time := time (int now.Unix )}}
+   {{ $monthIndex := printf "%d" $time.Month }}
    {{ $curIncome := $.Site.Data.curmonth.income }}
    {{ $curExpense := $.Site.Data.curmonth.expense }}
    {{ $curBalance := $.Site.Data.curmonth.balance }}
@@ -10,7 +11,7 @@
       <div class="sales">
          <div class="status">
            <div class="info">
-              <h3>{{ $time.Month }} 月收入</h3>
+              <h3>{{ $monthIndex }} 月收入</h3>
               <h1>{{ lang.NumFmt 0  $curIncome.total "- . ," }}</h1>
            </div>
            <div class="progresss">
