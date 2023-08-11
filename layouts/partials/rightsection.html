@@ -39,7 +39,7 @@
       <span class="material-icons-sharp">notifications_none</span>
    </div>
 {{ range $.Site.Data.mcycle.mcycle }}
-   {{ if eq .isDone true }}
+   {{ if eq .isDone false }}
    <div class="notification deactive">
       <div class="icon">
          <span class="material-icons-sharp">{{ .icon }}</span>
