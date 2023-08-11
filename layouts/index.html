@@ -11,7 +11,7 @@
       <div class="sales">
          <div class="status">
            <div class="info">
-              <h3>{{ $monthIndex }} 月收入</h3>
+              <h3>本月收入</h3>
               <h1>{{ lang.NumFmt 0  $curIncome.total "- . ," }}</h1>
            </div>
            <div class="progresss">
@@ -61,7 +61,7 @@
 
    <!-- New Users Section -->
    <div class="new-users">
-      <h2>本月分配項目</h2>
+      <h2>{{ $monthIndex }}月分配項目</h2>
       <div class="user-list">
          <div class="meters">
             <div id="meter-1" class="meter-container">
