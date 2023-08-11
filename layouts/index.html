@@ -101,7 +101,7 @@
    <!-- End of Recent Orders -->
 <script>
 const f = [];
-f.push({borderWidth:10,initialProgress:12436,maxProgress:31800,backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontFamily:"Codystar",fontSize:24,progressFormatter:i=>`${i.toFixed(0)}`,fluidConfiguration:{color:"#1e90ff"}});
+f.push({borderWidth:10,initialProgress:12436,maxProgress:31800,backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontFamily:"Codystar",fontSize:24,progressFormatter:i=>`${i.toFixed(0).numberFormat(0, '.', ',')}`,fluidConfiguration:{color:"#1e90ff"}});
 
 f.push({borderWidth:10,borderColor:"#567656",initialProgress:4140,maxProgress:49680,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>`${i.toFixed(0)}`,fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
 
