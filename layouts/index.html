@@ -78,6 +78,10 @@
                <div class="meter"></div>
                <h2>風險規避（累積）</h2>
             </div>
+            <div id="meter-5" class="meter-container">
+               <div class="meter"></div>
+               <h2>孝親費（累積）</h2>
+            </div>
           </div>
       </div>
    </div>
@@ -110,16 +114,21 @@ f.push({borderWidth:10,initialProgress:5300,maxProgress:63600,borderColor:"#2a2a
 
 f.push({borderWidth:10, initialProgress:15900,maxProgress:15900,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
 
-f.push({borderWidth:22,initialProgress:23.2,padding:50,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:60,progressFormatter:i=>i.toFixed(1)+"%",fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});f.push({borderWidth:22,initialProgress:62,padding:50,backgroundColor:"#208000",borderColor:"#800060",showProgress:!1,showBubbles:!1,dropShadow:!1,use3D:!1,fluidConfiguration:{color:"#f8f8ff"}});const m=(i,t)=>{const s=new E(i.querySelector(".meter"),t),e=i.querySelector("input"),o=i.querySelector("button");return o==null||o.addEventListener("click",()=>{const h=Number(e==null?void 0:e.value);if(isNaN(h)){alert("invalid progress. Number between 0 and 100");return}s.progress=h}),s};
+f.push({borderWidth:10,initialProgress:0,maxProgress:72000,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ',')",fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
+
+f.push({borderWidth:22,initialProgress:62,padding:50,backgroundColor:"#208000",borderColor:"#800060",showProgress:!1,showBubbles:!1,dropShadow:!1,use3D:!1,fluidConfiguration:{color:"#f8f8ff"}});
+
+const m=(i,t)=>{const s=new E(i.querySelector(".meter"),t),e=i.querySelector("input"),o=i.querySelector("button");return o==null||o.addEventListener("click",()=>{const h=Number(e==null?void 0:e.value);if(isNaN(h)){alert("invalid progress. Number between 0 and 100");return}s.progress=h}),s};
 
 document.addEventListener("DOMContentLoaded",function(){
    m(document.querySelector("#meter-1"),f[0]);
    const i=m(document.querySelector("#meter-2"),f[1]);i.textShadowColor="#589100",i.textShadowOpacity=.4;
    const t=m(document.querySelector("#meter-3"),f[2]);t.dropShadowColor="#ff4500";
    m(document.querySelector("#meter-4"),f[3]);
+   m(document.querySelector("#meter-5"),f[4]);
 });
 /*
-m(document.querySelector("#meter-5"),f[4]),m(document.querySelector("#meter-6"),f[5])});
+m(document.querySelector("#meter-6"),f[5]);
 */
 </script>
 {{ end }}
