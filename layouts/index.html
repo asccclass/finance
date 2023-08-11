@@ -1,15 +1,16 @@
 {{ define "main" }}
-{{ $curIncome := $.Site.Data.curmonth.income }}
-{{ $curExpense := $.Site.Data.curmonth.expense }}
-{{ $curBalance := $.Site.Data.curmonth.balance }}
-{{ $curIncomelen := $curIncome.summary | len }}
+   {{ $time := time (int .Params.addDate)}}
+   {{ $curIncome := $.Site.Data.curmonth.income }}
+   {{ $curExpense := $.Site.Data.curmonth.expense }}
+   {{ $curBalance := $.Site.Data.curmonth.balance }}
+   {{ $curIncomelen := $curIncome.summary | len }}
    <h1>{{.Title}}</h1>
    <!-- Analyses -->
    <div class="analyse">
       <div class="sales">
          <div class="status">
            <div class="info">
-              <h3>{{ .Now.Month }} 月收入</h3>
+              <h3>{{ $time.Month }} 月收入</h3>
               <h1>{{ lang.NumFmt 0  $curIncome.total "- . ," }}</h1>
            </div>
            <div class="progresss">
