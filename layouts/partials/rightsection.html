@@ -33,6 +33,25 @@
    </div>
 </div>
 
-{{ range $.Site.Data.liabilities }}
-   <div>test</div>
+<div class="reminders">
+   <div class="header">
+      <h2>提醒事項</h2>
+      <span class="material-icons-sharp">notifications_none</span>
+   </div>
+{{ range $.Site.Data.mcycle.mcycle }}
+   <div class="notification deactive">
+      <div class="icon">
+         <span class="material-icons-sharp">{{ .icon }}</span>
+      </div>
+      <div class="content">
+         <div class="info">
+            <h3>{{ .title }}</h3>
+            <small class="text_muted">
+               {{ .day }} NT.{{ .mount }}<span title="{{ .account }}">（{{ .bank }}）</span>
+            </small>
+         </div>
+         <span class="material-icons-sharp">more_vert</span>
+      </div>
+   </div>
 {{ end }}
+</div>
