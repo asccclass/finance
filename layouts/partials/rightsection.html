@@ -48,7 +48,7 @@
          <div class="info">
             <h3>{{ .title }}</h3>
             <small class="text_muted">
-               {{ .day }} NT.{{ .mount }}<span title="{{ .account }}">（{{ .bank }}）</span>
+               {{ .day }} NT.{{ lang.NumFmt 0 .mount "- . ," }}<span title="{{ .account }}">（{{ .bank }}）</span>
             </small>
          </div>
          <span class="material-icons-sharp">more_vert</span>
