@@ -26,7 +26,7 @@
          <div class="status">
             <div class="info">
                <h3>本月支出</h3>
-               <h1>{{ $curExpense.total }}</h1>
+               <h1>{{ lang.NumFmt 0  $curExpense.total "- . ," }}</h1>
             </div>
             <div class="progresss">
                <svg>
@@ -42,7 +42,7 @@
          <div class="status">
             <div class="info">
                <h3>本月餘額</h3>
-               <h1>{{ sub $curIncome.total $curExpense.total }}</h1>
+               <h1>{{ lang.NumFmt (sub $curIncome.total $curExpense.total) "- . ," }}</h1>
             </div>
             <div class="progresss">
                <svg>
