@@ -60,13 +60,11 @@
    </div>
    <!-- End of Analyses -->
 <font color="white">
-{{ $expense.year }}
 {{ $lifeFee := 0 }}
-{{ range $elem := $expense.summary }}
-{{ $elem.title }}
-{{ .title }}
-   {{ if ne $elem.title "投資" }}
-      {{ add $lifeFee $elem.total }}
+{{ range $elem_val := $expense.summary }}
+{{ $elem_val.title }}
+   {{ if ne $elem_val.title "投資" }}
+      {{ add $lifeFee $elem_val.total }}
    {{ end }}
 {{ end }}
 </font>
