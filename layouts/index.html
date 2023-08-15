@@ -2,7 +2,7 @@
    {{ $time := time (int now.Unix )}}
    {{ $monthIndex := printf "%d" $time.Month }}
    {{ $curIncome := $.Site.Data.curmonth.income }}
-   {{ $curExpense := $.Site.Data.curmonth.expense }}
+   {{ $curExpense := $.Site.Data.curexpanse }}
    {{ $curBalance := $.Site.Data.curmonth.balance }}
    {{ $curIncomelen := $curIncome.summary | len }}
    <h1>{{.Title}}</h1>
