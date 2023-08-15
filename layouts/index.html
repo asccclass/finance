@@ -5,6 +5,7 @@
    {{ $curExpense := $.Site.Data.curmonth.expense }}
    {{ $curBalance := $.Site.Data.curmonth.balance }}
    {{ $curIncomelen := $curIncome.summary | len }}
+   {{ $expense := $.Site.Data.curexpanse }}
    <h1>{{.Title}}</h1>
    <!-- Analyses -->
    <div class="analyse">
@@ -61,8 +62,9 @@
 <font color="white">
 {{ $.Site.Data.curexpanse }}
 {{ $lifeFee := 0 }}
-{{ range $elem := $.Site.Data.curexpanse.summary }}
+{{ range $elem := $expanse.summary }}
 {{ $elem.title }}
+{{ .title }}
    {{ if ne $elem.title "投資" }}
       {{ add $lifeFee $elem.total }}
    {{ end }}
