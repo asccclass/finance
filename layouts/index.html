@@ -59,9 +59,13 @@
    </div>
    <!-- End of Analyses -->
 <font color="white">
+{{ $.Site.Data.curexpanse }}
 {{ $lifeFee := 0 }}
 {{ range $elem := $.Site.Data.curexpanse.summary }}
 {{ $elem.title }}
+   {{ if ne $elem.title "投資" }}
+      {{ add $lifeFee $elem.total }}
+   {{ end }}
 {{ end }}
 </font>
 
