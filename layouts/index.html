@@ -60,6 +60,7 @@
    <!-- End of Analyses -->
 {{ $lifeFee := 0 }}
 {{ range $elem := $curExpense.summary }}
+{{ $elem.title }}
    {{ if ne $elem.title "投資" }}
       {{ add $lifeFee $elem.total }}
    {{ end }}
