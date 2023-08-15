@@ -2,7 +2,7 @@
    {{ $time := time (int now.Unix )}}
    {{ $monthIndex := printf "%d" $time.Month }}
    {{ $curIncome := $.Site.Data.curmonth.income }}
-   {{ $curExpense := $.Site.Data.curexpanse }}
+   {{ $curExpense := $.Site.Data.curmonth.expense }}
    {{ $curBalance := $.Site.Data.curmonth.balance }}
    {{ $curIncomelen := $curIncome.summary | len }}
    <h1>{{.Title}}</h1>
@@ -59,7 +59,7 @@
    </div>
    <!-- End of Analyses -->
 {{ $lifeFee := 0 }}
-{{ range $elem := $curExpense.summary }}
+{{ range $elem := $.Site.Data.curexpanse.summary }}
 {{ $elem.title }}
    {{ if ne $elem.title "投資" }}
       {{ add $lifeFee $elem.total }}
