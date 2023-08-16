@@ -60,11 +60,20 @@
    </div>
    <!-- End of Analyses -->
 <font color="white">
-{{ $lifeFee := 0 }}
-{{ $investFee := 0 }}
+{{ $lifeFee := 0 }}  <!-- 生活費 -->
+{{ $investFee := 0 }} <!-- 投資 -->
+{{ $parentsFee := 0 }} <!-- 孝親費 -->
 {{ range $elem := $expense.summary }}
    {{ if ne $elem.title "投資" }}
-      {{ $lifeFee = add $lifeFee $elem.total }}
+      {{ if eq $elem.title "育" }}
+         {{ range $detail := $elem.detail }}
+            {{ if eq $detail.subAccount "孝親費" }}
+               {{ $parentsFee = add $parentsFee $detail.cnt }}
+            {{ end }}
+         {{ end }}
+      {{ else }}
+         {{ $lifeFee = add $lifeFee $elem.total }}
+      {{ end }}
    {{ else }}
       {{ $investFee = add $investFee $elem.total }}
    {{ end }}
@@ -78,7 +87,7 @@
          <div class="meters">
             <div id="meter-1" class="meter-container">
                <div class="meter"></div>
-               <h2>生活費（剩餘）{{ sub 31800 $lifeFee }}</h2>
+               <h2>生活費（剩餘）</h2>
             </div>
             <div id="meter-4" class="meter-container">
                <div class="meter"></div>
@@ -94,7 +103,7 @@
             </div>
             <div id="meter-5" class="meter-container">
                <div class="meter"></div>
-               <h2>孝親費（累積）</h2>
+               <h2>孝親費</h2>
             </div>
           </div>
       </div>
@@ -128,7 +137,7 @@ f.push({borderWidth:10,initialProgress:5300,maxProgress:63600,borderColor:"#2a2a
 
 f.push({borderWidth:10, initialProgress:{{ sub 15900 $investFee }},maxProgress:15900,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
 
-f.push({borderWidth:10,initialProgress:0,maxProgress:72000,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
+f.push({borderWidth:10,initialProgress:{{ sub 6000 $parentsFee }},maxProgress:6000,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
 
 f.push({borderWidth:22,initialProgress:62,padding:50,backgroundColor:"#208000",borderColor:"#800060",showProgress:!1,showBubbles:!1,dropShadow:!1,use3D:!1,fluidConfiguration:{color:"#f8f8ff"}});
 
