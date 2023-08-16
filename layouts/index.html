@@ -61,9 +61,12 @@
    <!-- End of Analyses -->
 <font color="white">
 {{ $lifeFee := 0 }}
+{{ $investFee := 0 }}
 {{ range $elem := $expense.summary }}
    {{ if ne $elem.title "投資" }}
       {{ $lifeFee = add $lifeFee $elem.total }}
+   {{ else }}
+      {{ $investFee = add $investFee $elem.total
    {{ end }}
 {{ end }}
 </font>
@@ -75,7 +78,7 @@
          <div class="meters">
             <div id="meter-1" class="meter-container">
                <div class="meter"></div>
-               <h2>生活費（剩餘）{{ $lifeFee }}</h2>
+               <h2>生活費（剩餘）{{ sub 31800 $lifeFee }}</h2>
             </div>
             <div id="meter-4" class="meter-container">
                <div class="meter"></div>
@@ -119,7 +122,7 @@
 const f = [];
 f.push({borderWidth:10,initialProgress:{{ sub 31800 $lifeFee }},maxProgress:31800,backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontFamily:"Codystar",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff"}});
 
-f.push({borderWidth:10,borderColor:"#567656",initialProgress:4140,maxProgress:49680,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
+f.push({borderWidth:10,borderColor:"#567656",initialProgress:{{ sub 49680 $investFee }},maxProgress:49680,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
 
 f.push({borderWidth:10,initialProgress:5300,maxProgress:63600,borderColor:"#2a2a2a",backgroundColor:"#270100",showBubbles:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#ff4500",horizontalSpeed:p.SLOW,waveSpeed:p.SLOW}});
 
