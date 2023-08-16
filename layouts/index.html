@@ -144,11 +144,16 @@ f.push({borderWidth:22,initialProgress:62,padding:50,backgroundColor:"#208000",b
 const m=(i,t)=>{const s=new E(i.querySelector(".meter"),t),e=i.querySelector("input"),o=i.querySelector("button");return o==null||o.addEventListener("click",()=>{const h=Number(e==null?void 0:e.value);if(isNaN(h)){alert("invalid progress. Number between 0 and 100");return}s.progress=h}),s};
 
 document.addEventListener("DOMContentLoaded",function(){
-   m(document.querySelector("#meter-1"),f[0]);
-   const i=m(document.querySelector("#meter-2"),f[1]);i.textShadowColor="#589100",i.textShadowOpacity=.4;
-   const t=m(document.querySelector("#meter-3"),f[2]);t.dropShadowColor="#ff4500";
-   m(document.querySelector("#meter-4"),f[3]);
-   m(document.querySelector("#meter-5"),f[4]);
+   AddNodes("#meter-1", f[0]);
+   // m(document.querySelector("#meter-1"),f[0]);
+   const i = AddNodes("#meter-2", f[1]);
+   /*const i=m(document.querySelector("#meter-2"),f[1]);*/ i.textShadowColor="#589100",i.textShadowOpacity=.4;
+   const t = AddNodes("#meter-3", f[2]));
+   /*const t=m(document.querySelector("#meter-3"),f[2]);*/t.dropShadowColor="#ff4500";
+   AddNodes("#meter-4", f[3]);
+   AddNodes("#meter-5", f[4]);
+   // m(document.querySelector("#meter-4"),f[3]);
+   // m(document.querySelector("#meter-5"),f[4]);
 });
 /*
 m(document.querySelector("#meter-6"),f[5]);
