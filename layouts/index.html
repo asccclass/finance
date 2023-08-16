@@ -66,7 +66,7 @@
    {{ if ne $elem.title "投資" }}
       {{ $lifeFee = add $lifeFee $elem.total }}
    {{ else }}
-      {{ investFee = add $investFee $elem.total }}
+      {{ $investFee = add $investFee $elem.total }}
    {{ end }}
 {{ end }}
 </font>
