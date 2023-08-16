@@ -63,7 +63,7 @@
 {{ $lifeFee := 0 }}
 {{ range $elem := $expense.summary }}
    {{ if ne $elem.title "投資" }}
-      {{ $lifeFee += $elem.total }}
+      {{ $lifeFee = add $lifeFee $elem.total }}
    {{ end }}
 {{ end }}
 </font>
