@@ -1,0 +1,133 @@
+ {{ $time := time (int now.Unix )}}
+ {{ $monthIndex := printf "%d" $time.Month }}
+ {{ $assets := $.Site.Data.curassets }}
+   {{ $curExpense := $.Site.Data.curmonth.expense }}
+   <h1>{{.Title}}</h1>
+   <!-- Analyses -->
+   <div class="analyse">
+      <div class="sales">
+         <div class="status">
+           <div class="info">
+              <h3>本月收入</h3>
+              <h1>{{ lang.NumFmt 0  $assets.stocks.marketprice "- . ," }}</h1>
+           </div>
+           <div class="progresss">
+              <svg>
+                <circle cx="38" cy="38" r="36"></circle>
+              </svg>
+              <div class="percentage">
+                 <p> </p>
+              </div>
+           </div>
+         </div>
+      </div>
+      <div class="visits">
+         <div class="status">
+            <div class="info">
+               <h3>本月支出</h3>
+               <h1>0</h1>
+            </div>
+            <div class="progresss">
+               <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+               </svg>
+               <div class="percentage">
+                  <p>0</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="searches">
+         <div class="status">
+            <div class="info">
+               <h3>本月餘額</h3>
+               <h1>0</h1>
+            </div>
+            <div class="progresss">
+               <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+               </svg>
+               <div class="percentage">
+                  <p>+21%</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- End of Analyses -->
+   <!-- New Users Section -->
+   <div class="new-users">
+      <h2>{{ $monthIndex }}月分配項目</h2>
+      <div class="user-list">
+         <div class="meters">
+            <div id="meter-1" class="meter-container">
+               <div class="meter"></div>
+               <h2>生活費（）</h2>
+            </div>
+            <div id="meter-4" class="meter-container">
+               <div class="meter"></div>
+               <h2>投資理財（）</h2>
+            </div>
+            <div id="meter-2" class="meter-container">
+               <div class="meter"></div>
+               <h2>年度費用（）</h2>
+            </div>
+            <div id="meter-3" class="meter-container">
+               <div class="meter"></div>
+               <h2>風險規避（）</h2>
+            </div>
+            <div id="meter-5" class="meter-container">
+               <div class="meter"></div>
+               <h2>孝親費（{{ }}）</h2>
+            </div>
+          </div>
+      </div>
+   </div>
+   <!-- End of New Users Section -->
+   <!-- Recent Orders Table -->
+   <div class="recent-orders">
+      <h2>Recent Orders</h2>
+      <table>
+         <thead>
+            <tr>
+               <th>Course Name</th>
+               <th>Course Number</th>
+               <th>Payment</th>
+               <th>Status</th>
+               <th></th>
+            </tr>
+         </thead>
+         <tbody></tbody>
+      </table>
+      <a href="#">Show All</a>
+   </div>
+   <!-- End of Recent Orders -->
+<script>
+/*
+const f = [];
+f.push({borderWidth:10,initialProgress:{{ sub 31800 $lifeFee }},maxProgress:31800,backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontFamily:"Codystar",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff"}});
+
+f.push({borderWidth:10,borderColor:"#567656",initialProgress:4140,maxProgress:49680,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
+
+f.push({borderWidth:10,initialProgress:5300,maxProgress:63600,borderColor:"#2a2a2a",backgroundColor:"#270100",showBubbles:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#ff4500",horizontalSpeed:p.SLOW,waveSpeed:p.SLOW}});
+
+f.push({borderWidth:10, initialProgress:{{ sub 15900 $investFee }},maxProgress:15900,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
+
+f.push({borderWidth:10,initialProgress:{{ sub 6000 $parentsFee }},maxProgress:6000,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
+
+f.push({borderWidth:22,initialProgress:62,padding:50,backgroundColor:"#208000",borderColor:"#800060",showProgress:!1,showBubbles:!1,dropShadow:!1,use3D:!1,fluidConfiguration:{color:"#f8f8ff"}});
+
+const m=(i,t)=>{const s=new E(i.querySelector(".meter"),t),e=i.querySelector("input"),o=i.querySelector("button");return o==null||o.addEventListener("click",()=>{const h=Number(e==null?void 0:e.value);if(isNaN(h)){alert("invalid progress. Number between 0 and 100");return}s.progress=h}),s};
+
+document.addEventListener("DOMContentLoaded",function(){
+   AddNodes("#meter-1", f[0]);
+   const i = AddNodes("#meter-2", f[1]);
+   i.textShadowColor="#589100",i.textShadowOpacity=.4;
+   const t = AddNodes("#meter-3", f[2]);
+   t.dropShadowColor="#ff4500";
+   AddNodes("#meter-4", f[3]);
+   AddNodes("#meter-5", f[4]);
+   /* AddNodes("#meter-6",f[5]); */
+});
+*/
+</script>
