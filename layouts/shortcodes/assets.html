@@ -1,7 +1,7 @@
  {{ $time := time (int now.Unix )}}
  {{ $monthIndex := printf "%d" $time.Month }}
  {{ $assets := $.Site.Data.curassets }}
-{{ $total := add (int $assets.stocks.marketprice) (int $assets.found.marketprice) }}
+{{ $total := add (int $assets.stocks.marketprice) (int $assets.found.marketprice) (int $assets.cash.marketprice) }}
    <h1></h1>
    <!-- Analyses -->
    <div class="analyse">
@@ -32,7 +32,7 @@
                   <circle cx="38" cy="38" r="36"></circle>
                </svg>
                <div class="percentage">
-                  <p>40%</p>
+                  <p>{{ div (int $assets.stocks.marketprice) $total }}%</p>
                </div>
             </div>
          </div>
@@ -51,6 +51,22 @@
                   <p>+21%</p>
                </div>
             </div>
+         </div>
+      </div>
+      <div class="sales">
+         <div class="status">
+           <div class="info">
+              <h3>現金</h3>
+              <h1>{{ lang.NumFmt 0  $assets.cash.marketprice "- . ," }}</h1>
+           </div>
+           <div class="progresss">
+              <svg>
+                <circle cx="38" cy="38" r="36"></circle>
+              </svg>
+              <div class="percentage">
+                 <p> </p>
+              </div>
+           </div>
          </div>
       </div>
    </div>
