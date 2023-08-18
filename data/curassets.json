@@ -1,5 +1,5 @@
-[
-   { "stocks": { "marketprice": "2736171", "cost": "1815785" },
-     "details": []
+{ 
+   "stocks": { 
+      "marketprice": "2736171", "cost": "1815785", "details": []
    }
-]
+}
