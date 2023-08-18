@@ -1,7 +1,7 @@
  {{ $time := time (int now.Unix )}}
  {{ $monthIndex := printf "%d" $time.Month }}
  {{ $assets := $.Site.Data.curassets }}
-{{ $total := add $assets.stocks.marketprice $assets.found.marketprice }}
+{{ $total := add (int $assets.stocks.marketprice) (int $assets.found.marketprice) }}
    <h1></h1>
    <!-- Analyses -->
    <div class="analyse">
