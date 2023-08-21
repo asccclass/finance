@@ -2,6 +2,7 @@
  {{ $monthIndex := printf "%d" $time.Month }}
  {{ $assets := $.Site.Data.curassets }}
 {{ $total := add (int $assets.stocks.marketprice) (int $assets.found.marketprice) (int $assets.cash.marketprice) }}
+<!-- 資產 -->
    <h1></h1>
    <!-- Analyses -->
    <div class="analyse">
@@ -115,6 +116,20 @@
          </thead>
          <tbody></tbody>
       </table>
-      <a href="#">Show All</a>
+      <a href="#">Show All article</a>
    </div>
    <!-- End of Recent Orders -->
+
+<script>
+var chart = bb.generate({
+  data: {
+    columns: [
+	["data1", 30],
+	["data2", 120]
+    ],
+    type: "pie" // for ESM specify as: pie()
+   }
+  },
+  bindto: "#pieChart"
+});
+</script>
