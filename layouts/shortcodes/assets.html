@@ -109,7 +109,7 @@ function Table_Banks(Orders) {
    Orders.forEach(order => {
     const tr = document.createElement('tr');
     const trContent = `
-        <td>${order.Name}</td>
+        <td>${order.name}</td>
         <td>${order.rate}</td>
         <td>${order.current}</td>
         <td class="${order.status === 'Declined' ? 'danger' : order.status === 'Pending' ? 'warning' : 'primary'}">${order.ntd}</td>
