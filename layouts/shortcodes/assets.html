@@ -9,8 +9,8 @@
       <div class="sales">
          <div class="status">
            <div class="info">
-              <h3>總資產</h3>
-              <h1>{{ lang.NumFmt 0  $total "- . ," }}</h1>
+              <h3>現金</h3>
+              <h1>{{ lang.NumFmt 0  $assets.cash.marketprice "- . ," }}</h1>
            </div>
            <div class="progresss">
               <svg>
@@ -52,22 +52,6 @@
                   <p>+21%</p>
                </div>
             </div>
-         </div>
-      </div>
-      <div class="sales">
-         <div class="status">
-           <div class="info">
-              <h3>現金</h3>
-              <h1>{{ lang.NumFmt 0  $assets.cash.marketprice "- . ," }}</h1>
-           </div>
-           <div class="progresss">
-              <svg>
-                <circle cx="38" cy="38" r="36"></circle>
-              </svg>
-              <div class="percentage">
-                 <p> </p>
-              </div>
-           </div>
          </div>
       </div>
    </div>
