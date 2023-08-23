@@ -113,7 +113,7 @@ function Table_Banks(Orders) {
       return (i == 0 ? 0 : (i > 0 ? 1 : -1)); 
    });
    Orders.forEach(order => {
-    order.ntd = parseInt(order.ntd).toFixed(2).toLocaleString();
+    order.ntd = parseFloat(order.ntd).toFixed(2).toLocaleString();
     const tr = document.createElement('tr');
     const trContent = `
         <td>${order.name}</td>
