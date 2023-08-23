@@ -106,6 +106,10 @@
 
 <script>
 function Table_Banks(Orders) {
+   // 排序
+   Orders.sort(function (a, b) {
+      return a.current.localeCompare(b.current);
+   });
    Orders.forEach(order => {
     const tr = document.createElement('tr');
     const trContent = `
