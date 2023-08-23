@@ -143,7 +143,7 @@ function DrawChart() {
 }
 
 document.addEventListener("DOMContentLoaded",function(){
-   if(DrawChart) DrawChart();
+   // if(DrawChart) DrawChart();
    var banks = {{ $assets.cash.details }}
    Table_Banks(banks);
 });
