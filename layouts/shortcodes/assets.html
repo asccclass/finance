@@ -114,7 +114,7 @@ function Table_Banks(Orders) {
    });
    // 輸出 tr
    Orders.forEach(order => {
-    order.ntd = parseFloat(order.ntd).toFixed(2).toLocaleString("zh_TW");
+    order.ntd = parseFloat(order.ntd).toLocaleString();
     const tr = document.createElement('tr');
     const trContent = `
         <td>${order.name}</td>
