@@ -3,7 +3,9 @@
  {{ $assets := $.Site.Data.curassets }}
 {{ $total := add (int $assets.stocks.marketprice) (int $assets.found.marketprice) (int $assets.cash.marketprice) }}
 <!-- 資產 -->
-   <h1></h1>
+{{ with .Params.title }}
+   <h1 id="title">{{ .Title }}</h1>
+{{ end }}
    <!-- Analyses -->
    <div class="analyse">
       <div class="sales">
