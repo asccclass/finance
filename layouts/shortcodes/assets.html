@@ -108,9 +108,9 @@
 function Table_Banks(Orders) {
    // 排序
    Orders.sort(function (a, b) {
-      a = parseInt(a.ntd)
-      b = parseInt(b.ntd)
-      return a.localeCompare(b);
+      var c = parseInt(a.ntd)
+      var d = parseInt(b.ntd)
+      return d.localeCompare(c);
    });
    Orders.forEach(order => {
     const tr = document.createElement('tr');
