@@ -112,14 +112,15 @@ function Table_Banks(Orders) {
       var i = d - c;
       return (i == 0 ? 0 : (i > 0 ? 1 : -1)); 
    });
+   // 輸出 tr
    Orders.forEach(order => {
-    order.ntd = parseFloat(order.ntd).toFixed(2).toLocaleString();
+    order.ntd = parseFloat(order.ntd).toFixed(2).toLocaleString("zh_TW");
     const tr = document.createElement('tr');
     const trContent = `
         <td>${order.name}</td>
         <td>${order.rate}</td>
         <td>${order.current}</td>
-        <td class="${order.status === 'Declined' ? 'danger' : order.status === 'Pending' ? 'warning' : 'primary'}">${order.ntd}</td>
+        <td class="warning">${order.ntd}</td>
         <td class="primary">Details</td>
     `;
     tr.innerHTML = trContent;
