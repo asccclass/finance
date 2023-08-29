@@ -46,12 +46,13 @@
 {
    "bank": "國泰銀行",
    "account": "",
-   "rate": "1.61%",
+   "rate": "1.88%",
    "total": 1100000,
    "period": 84,
    "year": 7,
    "start": "2023-08-24",
    "details": [ 
+      { "date": "2023-08-24", "period": "1", "principal": 12230, "interest": 1756, "total": 13986 }
    ]
 }
 ]
