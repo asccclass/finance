@@ -16,7 +16,7 @@
             <circle cx="38" cy="38" r="36"></circle>
          </svg>
          <div class="percentage" title="貸款總金額：{{ lang.NumFmt 0 .total "- . ," }}">
-            <p title="單位：萬">{{ sub 100 (math.Floor (mul (div $s .period) 100)) }} %</p>
+            <p>{{ sub 100 (math.Floor (mul (div $s .period) 100)) }} %</p>
          </div>
       </div>
    </div>
