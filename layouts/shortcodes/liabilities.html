@@ -1,39 +1,42 @@
 {{ $total := 0 }}
+{{ $elems := $.Site.Data.liabilities }}
    <h1>{{.Name}}</h1>
    <!-- Analyses -->
    <div class="analyse">
-   {{ range $.Site.Data.liabilities }}
+   {{ range $elems }}
       {{ partial "analysis.html" . }}	
    {{ end }}
    </div>
 <!-- End of Analyses -->
 <!-- New Users Section -->
-<div class="new-users">
-   <h2>New Users</h2>
-   <div class="user-list">
-                 <div class="user">
-                     <img src="images/profile-2.jpg">
-                     <h2>Jack</h2>
-                     <p>54 Min Ago</p>
-                 </div>
-                 <div class="user">
-                     <img src="images/profile-3.jpg">
-                     <h2>Amir</h2>
-                     <p>3 Hours Ago</p>
-                 </div>
-                 <div class="user">
-                     <img src="images/profile-4.jpg">
-                     <h2>Ember</h2>
-                     <p>6 Hours Ago</p>
-                 </div>
-                 <div class="user">
-                     <img src="images/plus.png">
-                     <h2>More</h2>
-                     <p>New User</p>
-                 </div>
+   <div class="new-users">
+      <h2>截至目前為止餘額</h2>
+      <div class="user-list">
+         <div class="meters">
+            <div id="meter-1" class="meter-container">
+               <div class="meter"></div>
+               <h2>土地銀行房貸（{{ $elem[0].total }}）</h2>
+            </div>
+            <div id="meter-4" class="meter-container">
+               <div class="meter"></div>
+               <h2>政府優惠房貸（{{ $investFee }}）</h2>
+            </div>
+            <div id="meter-2" class="meter-container">
+               <div class="meter"></div>
+               <h2>土地銀行增貸（累積）</h2>
+            </div>
+            <div id="meter-3" class="meter-container">
+               <div class="meter"></div>
+               <h2>國泰銀行信貸（）</h2>
+            </div>
+            <div id="meter-5" class="meter-container">
+               <div class="meter"></div>
+               <h2>餘額（{{ $parentsFee }}）</h2>
+            </div>
+          </div>
+      </div>
    </div>
-</div>
-<!-- End of New Users Section -->
+   <!-- End of New Users Section -->
 <!-- Recent Orders Table -->
 <div class="recent-orders">
              <h2>Recent Orders</h2>
