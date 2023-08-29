@@ -59,29 +59,9 @@
 <script>
 const f = [];
 f.push({borderWidth:10, initialProgress:{{ sub (index $elems 0).total 0 }},maxProgress:{{(index $elems 0).total}},borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
-/*
-f.push({borderWidth:10,borderColor:"#567656",initialProgress:4140,maxProgress:49680,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
+console.log(f[0].initialProgress);
 
-f.push({borderWidth:10,initialProgress:5300,maxProgress:63600,borderColor:"#2a2a2a",backgroundColor:"#270100",showBubbles:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#ff4500",horizontalSpeed:p.SLOW,waveSpeed:p.SLOW}});
-
-f.push({borderWidth:10,initialProgress:{{ sub 15900 $investFee }},maxProgress:15900,backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontFamily:"Codystar",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff"}});
-
-f.push({borderWidth:10,initialProgress:{{ sub 6000 $parentsFee }},maxProgress:6000,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
-
-f.push({borderWidth:22,initialProgress:62,padding:50,backgroundColor:"#208000",borderColor:"#800060",showProgress:!1,showBubbles:!1,dropShadow:!1,use3D:!1,fluidConfiguration:{color:"#f8f8ff"}});
-
-const m=(i,t)=>{const s=new E(i.querySelector(".meter"),t),e=i.querySelector("input"),o=i.querySelector("button");return o==null||o.addEventListener("click",()=>{const h=Number(e==null?void 0:e.value);if(isNaN(h)){alert("invalid progress. Number between 0 and 100");return}s.progress=h}),s};
-*/
 document.addEventListener("DOMContentLoaded",function(){
    AddNodes("#meter-1", f[0]);
-/*
-   const i = AddNodes("#meter-2", f[1]);
-   i.textShadowColor="#589100",i.textShadowOpacity=.4;
-   const t = AddNodes("#meter-3", f[2]);
-   t.dropShadowColor="#ff4500";
-   AddNodes("#meter-4", f[3]);
-   AddNodes("#meter-5", f[4]);
-*/
-   /* AddNodes("#meter-6",f[5]); */
 });
 </script>
