@@ -57,8 +57,10 @@
 <!-- End of Recent Orders -->
 <script>
 const f = [];
-f.push({borderWidth:10, initialProgress:{{ sub (index $elems 0).total 0 }},maxProgress:{{(index $elems 0).total}},borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
-console.log(f[0].initialProgress);
+f.push({borderWidth:10, initialProgress:0,maxProgress:0,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
+
+f[0].maxProgress = {{(index $elems 0).total}};
+f[0].initialProgress = {{ sub (index $elems 0).total 50000 }};
 
 document.addEventListener("DOMContentLoaded",function(){
    AddNodes("#meter-1", f[0]);
