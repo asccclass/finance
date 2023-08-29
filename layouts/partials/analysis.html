@@ -1,9 +1,13 @@
-{{ 
-   $s := .details | len 
-}}
+{{ $total := .total }}
+{{ $s := .details | len }}
+{{ if $s > 0 }}
+   {{ range .details }}
+      {{ $total = sub $total .principal }}
+   {{ end }}
+{{ end }}
 <div class="visits">
    <div class="status">
-      <div class="info">
+      <div class="info" title="{{ .account }}">
          <h3>{{ .bank }}</h3>
          <h1>{{ lang.NumFmt 0 .total "- . ," }}</h1>
       </div>
@@ -11,7 +15,7 @@
          <svg>
             <circle cx="38" cy="38" r="36"></circle>
          </svg>
-         <div class="percentage">
+         <div class="percentage" title="貸款總金額：{{ lang.NumFmt 0 .total "- . ," }}">
             <p title="單位：萬">{{ sub 100 (math.Floor (mul (div $s .period) 100)) }} %</p>
          </div>
       </div>
