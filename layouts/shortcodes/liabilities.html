@@ -56,15 +56,14 @@
 </div>
 <!-- End of Recent Orders -->
 <script>
-const f = [];
-f.push({borderWidth:10, initialProgress:0,maxProgress:0,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
 
-f[0].maxProgress = {{(index $elems 0).total}};
-f[0].initialProgress = {{ sub (index $elems 0).total 50000 }};
+addBlueBall();
+ballElements[0].maxProgress = {{(index $elems 0).total}};
+ballElements[0].initialProgress = {{ sub (index $elems 0).total 50000 }};
 
 const m=(i,t)=>{const s=new E(i.querySelector(".meter"),t),e=i.querySelector("input"),o=i.querySelector("button");return o==null||o.addEventListener("click",()=>{const h=Number(e==null?void 0:e.value);if(isNaN(h)){alert("invalid progress. Number between 0 and 100");return}s.progress=h}),s};
 
 document.addEventListener("DOMContentLoaded",function(){
-   AddNodes("#meter-1", f[0]);
+   AddNodes("#meter-1", ballElements[0]);
 });
 </script>
