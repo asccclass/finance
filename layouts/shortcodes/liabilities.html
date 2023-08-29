@@ -1,5 +1,5 @@
 {{ $elems := $.Site.Data.liabilities }}
-{{ $total := (index $elems 0).total + (index $elems 1).total + (index $elems 2).total + (index $elems 3).total }}
+{{ $total := add (index $elems 0).total (index $elems 1).total (index $elems 2).total (index $elems 3).total }}
    <h1>{{.Name}}</h1>
    <!-- Analyses -->
    <div class="analyse">
