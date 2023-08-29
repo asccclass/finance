@@ -1,6 +1,6 @@
 {{ $total := .total }}
 {{ $s := .details | len }}
-{{ if $s > 0 }}
+{{ if gt $s 0 }}
    {{ range $ds := .details }}
       {{ $total = sub $total $ds.principal }}
    {{ end }}
