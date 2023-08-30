@@ -67,7 +67,7 @@
 
 addBlueBall();
 ballElements[0].maxProgress = {{(index $elems 0).total}};
-ballElements[0].initialProgress = {{ sub (index $elems 0).total $s[0] }};
+ballElements[0].initialProgress = {{ sub (index $elems 0).total (index $s 0) }};
 
 document.addEventListener("DOMContentLoaded",function(){
    AddNodes("#meter-1", ballElements[0]);
