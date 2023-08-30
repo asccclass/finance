@@ -23,19 +23,19 @@
          <div class="meters">
             <div id="meter-1" class="meter-container">
                <div class="meter"></div>
-               <h2>{{(index $elems 0).bank}}（{{ (index $elems 0).total }}）</h2>
+               <h2 title="total:{{ (index $elems 0).total }}, 已繳: {{ index $s 0 }}">{{(index $elems 0).bank}}</h2>
             </div>
             <div id="meter-4" class="meter-container">
                <div class="meter"></div>
-               <h2>{{(index $elems 1).bank}}（{{ (index $elems 1).total}}）</h2>
+               <h2 title="total:{{ (index $elems 1).total }}, 已繳: {{ index $s 1 }}">{{(index $elems 1).bank}}</h2>
             </div>
             <div id="meter-2" class="meter-container">
                <div class="meter"></div>
-               <h2>{{(index $elems 2).bank}}（{{ (index $elems 2).total}}）</h2>
+               <h2 title="total:{{ (index $elems 2).total }}, 已繳: {{ index $s 2 }}">{{(index $elems 2).bank}}</h2>
             </div>
             <div id="meter-3" class="meter-container">
                <div class="meter"></div>
-               <h2>{{(index $elems 3).bank}}（{{ (index $elems 3).total}}）</h2>
+               <h2 title="total:{{ (index $elems 3).total }}, 已繳: {{ index $s 3 }}">{{(index $elems 3).bank}}</h2>
             </div>
             <div id="meter-5" class="meter-container">
                <div class="meter"></div>
@@ -65,11 +65,11 @@
 <!-- End of Recent Orders -->
 <script>
 
-addBlueBall();
-ballElements[0].maxProgress = {{(index $elems 0).total}};
-ballElements[0].initialProgress = {{ sub (index $elems 0).total (index $s 0) }};
+addBall("Blue", {{ sub (index $elems 0).total (index $s 0) }}, {{(index $elems 0).total}});
+addBall("pupple", {{ sub (index $elems 1).total (index $s 1) }}, {{(index $elems 1).total}});
 
 document.addEventListener("DOMContentLoaded",function(){
    AddNodes("#meter-1", ballElements[0]);
+   AddNodes("#meter-2", ballElements[1]);
 });
 </script>
