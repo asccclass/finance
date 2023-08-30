@@ -69,8 +69,6 @@ addBlueBall();
 ballElements[0].maxProgress = {{(index $elems 0).total}};
 ballElements[0].initialProgress = {{ sub (index $elems 0).total $s[0] }};
 
-const m=(i,t)=>{const s=new E(i.querySelector(".meter"),t),e=i.querySelector("input"),o=i.querySelector("button");return o==null||o.addEventListener("click",()=>{const h=Number(e==null?void 0:e.value);if(isNaN(h)){alert("invalid progress. Number between 0 and 100");return}s.progress=h}),s};
-
 document.addEventListener("DOMContentLoaded",function(){
    AddNodes("#meter-1", ballElements[0]);
 });
