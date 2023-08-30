@@ -138,9 +138,9 @@ function DrawChart() {
    chart.load({});
 }
 {{ $total := add $assets.found.marketprice $assets.stocks.marketprice $assets.cash.cost }}
-addBall("Blue", {{ $assets.cash.cost }}, {{ $assets.cash.cost}});
-addBall("pupple", {{ $assets.stocks.marketprice }}, {{ $assets.stocks.marketprice }});
-addBall("green", {{ $assets.found.marketprice }}, {{$assets.found.marketprice}});
+addBall("Blue", {{ (int $assets.cash.cost) }}, {{ (int $assets.cash.cost) }});
+addBall("pupple", {{ (int $assets.stocks.marketprice) }}, {{ (int $assets.stocks.marketprice) }});
+addBall("green", {{ (int $assets.found.marketprice) }}, {{ (int $assets.found.marketprice) }});
 addBall("lightblue", {{ $total }}, {{ $total}});
 
 document.addEventListener("DOMContentLoaded",function(){
