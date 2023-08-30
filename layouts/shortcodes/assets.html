@@ -58,28 +58,24 @@
    <!-- End of Analyses -->
    <!-- New Users Section -->
    <div class="new-users">
-      <h2>{{ $monthIndex }}月分配項目</h2>
+      <h2>資產與目標</h2>
       <div class="user-list">
          <div class="meters">
             <div id="meter-1" class="meter-container">
                <div class="meter"></div>
-               <h2>生活費（）</h2>
-            </div>
-            <div id="meter-4" class="meter-container">
-               <div class="meter"></div>
-               <h2>投資理財（）</h2>
+               <h2>現金</h2>
             </div>
             <div id="meter-2" class="meter-container">
                <div class="meter"></div>
-               <h2>年度費用（）</h2>
+               <h2>股票</h2>
             </div>
             <div id="meter-3" class="meter-container">
                <div class="meter"></div>
-               <h2>風險規避（）</h2>
+               <h2>基金/債劵</h2>
             </div>
-            <div id="meter-5" class="meter-container">
+            <div id="meter-4" class="meter-container">
                <div class="meter"></div>
-               <h2>孝親費（）</h2>
+               <h2>總資產</h2>
             </div>
           </div>
       </div>
@@ -87,7 +83,7 @@
    <!-- End of New Users Section -->
    <!-- Recent Orders Table -->
    <div class="recent-orders">
-      <h2>銀行餘額</h2>
+      <h2>各銀行餘額</h2>
       <table>
          <thead>
             <tr>
@@ -141,10 +137,19 @@ function DrawChart() {
    });
    chart.load({});
 }
+{{ $total := add $assets.found.marketprice $assets.stocks.marketprice $assets.cash.cost }}
+addBall("Blue", {{ $assets.cash.cost }}, {{ $assets.cash.cost}});
+addBall("pupple", {{ $assets.stocks.marketprice }}, {{ $assets.stocks.marketprice }});
+addBall("green", {{ $assets.found.marketprice }}, {{$assets.found.marketprice}});
+addBall("lightblue", {{ $total }}, {{ $total}});
 
 document.addEventListener("DOMContentLoaded",function(){
    // if(DrawChart) DrawChart();
    var banks = {{ $assets.cash.details }}
    Table_Banks(banks);
+   AddNodes("#meter-1", ballElements[0]);
+   AddNodes("#meter-2", ballElements[1]);
+   AddNodes("#meter-3", ballElements[2]);
+   AddNodes("#meter-4", ballElements[3]);
 });
 </script>
