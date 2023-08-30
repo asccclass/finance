@@ -70,7 +70,7 @@ addBall("Blue", {{ sub (index $elems 0).total (index $s 0) }}, {{(index $elems 0
 addBall("pupple", {{ sub (index $elems 1).total (index $s 1) }}, {{(index $elems 1).total}});
 addBall("green", {{ sub (index $elems 2).total (index $s 2) }}, {{(index $elems 2).total}});
 addBall("brown", {{ sub (index $elems 3).total (index $s 3) }}, {{(index $elems 3).total}});
-addBall("lightblue", {{ $xTotal }}, {{ $total}});
+addBall("lightblue", {{ sub $total $xTotal }}, {{ $total}});
 
 document.addEventListener("DOMContentLoaded",function(){
    AddNodes("#meter-1", ballElements[0]);
