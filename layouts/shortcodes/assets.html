@@ -63,7 +63,7 @@
          <div class="meters">
             <div id="meter-1" class="meter-container">
                <div class="meter"></div>
-               <h2>現金</h2>
+               <h2 title="目標：500萬">現金</h2>
             </div>
             <div id="meter-2" class="meter-container">
                <div class="meter"></div>
@@ -137,7 +137,7 @@ function DrawChart() {
    });
    chart.load({});
 }
-addBall("Blue", {{ (int $assets.cash.cost) }}, {{ (int $assets.cash.cost) }});
+addBall("Blue", {{ (int $assets.cash.cost) }}, {{ 5000000 }});
 addBall("pupple", {{ (int $assets.stocks.marketprice) }}, {{ (int $assets.stocks.marketprice) }});
 addBall("green", {{ (int $assets.found.marketprice) }}, {{ (int $assets.found.marketprice) }});
 addBall("lightblue", {{ (int $total) }}, {{ (int $total) }});
