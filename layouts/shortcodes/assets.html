@@ -141,7 +141,7 @@ function DrawChart() {
 addBall("Blue", {{ (int $assets.cash.cost) }}, {{ (int $assets.cash.cost) }});
 addBall("pupple", {{ (int $assets.stocks.marketprice) }}, {{ (int $assets.stocks.marketprice) }});
 addBall("green", {{ (int $assets.found.marketprice) }}, {{ (int $assets.found.marketprice) }});
-addBall("lightblue", {{ $total }}, {{ $total}});
+addBall("lightblue", {{ (int $total) }}, {{ (int $total) }});
 
 document.addEventListener("DOMContentLoaded",function(){
    // if(DrawChart) DrawChart();
