@@ -135,13 +135,13 @@ addBall("lightblue", 15900, 15900);
 addBall("brown", 6000, 6000);
 
 document.addEventListener("DOMContentLoaded",function(){
-   AddNodes("#meter-1", f[0]);
-   const i = AddNodes("#meter-2", f[1]);
+   AddNodes("#meter-1", ballElements[0]);
+   const i = AddNodes("#meter-2", ballElements[1]);
    i.textShadowColor="#589100",i.textShadowOpacity=.4;
-   const t = AddNodes("#meter-3", f[2]);
+   const t = AddNodes("#meter-3", ballElements[2]);
    t.dropShadowColor="#ff4500";
-   AddNodes("#meter-4", f[3]);
-   AddNodes("#meter-5", f[4]);
+   AddNodes("#meter-4", ballElements[3]);
+   AddNodes("#meter-5", ballElements[4]);
 });
 </script>
 {{ end }}
