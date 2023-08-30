@@ -15,3 +15,35 @@ Number.prototype.numberFormat = function(c, d, t){
    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + 
           (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
+
+const ballElements = [];
+
+// 紫色球體冒泡泡
+function addPuppleBall() {
+   ballElements.push({borderWidth:10, initialProgress:0,maxProgress:0,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
+}
+
+// 淡藍色
+function addBlueBall() {
+   ballElements.push({borderWidth:10,borderColor:"#567656",initialProgress:0,maxProgress:0,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
+}
+
+// 綠色
+function addGreenBall() {
+   ballElements.push({borderWidth:10,initialProgress:0,maxProgress:0,borderColor:"#2a2a2a",backgroundColor:"#270100",showBubbles:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#ff4500",horizontalSpeed:p.SLOW,waveSpeed:p.SLOW}});
+}
+
+// 棕色
+function addBrownBall() {
+   ballElements.push({borderWidth:10,initialProgress:0,maxProgress:0,backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontFamily:"Codystar",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff"}});
+}
+
+// 藍色
+function addBlueBall() {
+   ballElements.push({borderWidth:10,initialProgress:0,maxProgress:0,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
+}
+
+// 不知名色
+function addBall() {
+   ballElements.push({borderWidth:22,initialProgress:0,padding:0,backgroundColor:"#208000",borderColor:"#800060",showProgress:!1,showBubbles:!1,dropShadow:!1,use3D:!1,fluidConfiguration:{color:"#f8f8ff"}});
+}
