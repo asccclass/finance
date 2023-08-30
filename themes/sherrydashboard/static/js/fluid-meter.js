@@ -24,7 +24,7 @@ function addpuppleBall(initValue, maxValue) {
    ballElements.push({borderWidth:10, initialProgress:initValue,maxProgress:maxValue,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
 }
 
-// 淡藍色
+// 藍色
 function addblueBall(initValue, maxValue) {
    ballElements.push({borderWidth:10,borderColor:"#567656",initialProgress:initValue,maxProgress:maxValue,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
 }
@@ -39,8 +39,8 @@ function addbrownBall(initValue, maxValue) {
    ballElements.push({borderWidth:10,initialProgress:initValue,maxProgress:maxValue,backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontFamily:"Codystar",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff"}});
 }
 
-// 藍色
-function addblueBall(initValue, maxValue) {
+// 淡藍色
+function addlightblueBall(initValue, maxValue) {
    ballElements.push({borderWidth:10,initialProgress:initValue,maxProgress:maxValue,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
 }
 
