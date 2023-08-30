@@ -87,23 +87,23 @@
          <div class="meters">
             <div id="meter-1" class="meter-container">
                <div class="meter"></div>
-               <h2>生活費（{{ $lifeFee }}）</h2>
+               <h2>生活費（街口）</h2>
             </div>
             <div id="meter-4" class="meter-container">
                <div class="meter"></div>
-               <h2>投資理財（{{ $investFee }}）</h2>
+               <h2>投資理財（永豐）</h2>
             </div>
             <div id="meter-2" class="meter-container">
                <div class="meter"></div>
-               <h2>年度費用（累積）</h2>
+               <h2>年度費用（王道）</h2>
             </div>
             <div id="meter-3" class="meter-container">
                <div class="meter"></div>
-               <h2>風險規避（累積）</h2>
+               <h2>風險規避（上海商銀）</h2>
             </div>
             <div id="meter-5" class="meter-container">
                <div class="meter"></div>
-               <h2>孝親費（{{ $parentsFee }}）</h2>
+               <h2>孝親費（富邦）</h2>
             </div>
           </div>
       </div>
@@ -131,8 +131,8 @@
 addBall("Blue", {{ sub 31800 $lifeFee }}, 31800);
 addBall("pupple", 4140, 49680);
 addBall("green", 5300, 63600);
-addBall("lightblue", 15900, 15900);
-addBall("brown", 6000, 6000);
+addBall("lightblue", {{ $investFee }}, {{ $investFee }});
+addBall("brown", {{ $parentsFee }}, 200000);
 
 document.addEventListener("DOMContentLoaded",function(){
    AddNodes("#meter-1", ballElements[0]);
