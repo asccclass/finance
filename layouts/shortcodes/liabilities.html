@@ -1,4 +1,12 @@
 {{ $elems := $.Site.Data.liabilities }}
+{{ $s := slice }}
+{{ range $elem := $elems }}
+   {{ $subTotal := 0 }}
+   {{ range $elem.details }}
+      {{ $subTotal = add $subTotal .principal }}
+   {{ end }}
+   {{ $s = $s | append $subTotal }}
+{{ end }}
 {{ $total := add (index $elems 0).total (index $elems 1).total (index $elems 2).total (index $elems 3).total }}
    <h1>{{.Name}}</h1>
    <!-- Analyses -->
@@ -59,7 +67,7 @@
 
 addBlueBall();
 ballElements[0].maxProgress = {{(index $elems 0).total}};
-ballElements[0].initialProgress = {{ sub (index $elems 0).total 50000 }};
+ballElements[0].initialProgress = {{ sub (index $elems 0).total $s[0] }};
 
 const m=(i,t)=>{const s=new E(i.querySelector(".meter"),t),e=i.querySelector("input"),o=i.querySelector("button");return o==null||o.addEventListener("click",()=>{const h=Number(e==null?void 0:e.value);if(isNaN(h)){alert("invalid progress. Number between 0 and 100");return}s.progress=h}),s};
 
