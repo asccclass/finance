@@ -127,7 +127,7 @@ function DrawChart() {
    });
    chart.load({});
 }
-{{ $colorz := slice "blue", "pupple", :"green", "lightblue", "brown", "x" }}
+{{ $colorz := slice "blue" "pupple" "green" "lightblue" "brown" "x" }}
 {{ $lex := 0 }}
 {{ range $idx, elem := $assets.stocks.details }}
    {{ if and (ne elem.target 0) (ne $lex 7) }}
