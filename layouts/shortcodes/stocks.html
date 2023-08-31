@@ -76,6 +76,7 @@
                <th>單價</th>
                <th>現價</th>
                <th>成本</th>
+               <th>尚欠</th>
                <th></th>
             </tr>
          </thead>
@@ -105,6 +106,7 @@ function Table_Banks(Orders) {
         <td>${order.rate}</td>
         <td class="warning">${order.current}</td>
         <td class="warning">${order.ntd}</td>
+        <td class="danger">${order.target}</td>
         <td class="primary" class="text-align:right;">Details</td>
     `;
     tr.innerHTML = trContent;
