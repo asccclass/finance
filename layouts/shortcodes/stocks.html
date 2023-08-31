@@ -67,14 +67,15 @@
    <!-- End of New Users Section -->
    <!-- Recent Orders Table -->
    <div class="recent-orders">
-      <h2>各銀行餘額</h2>
+      <h2>股票列表</h2>
       <table>
          <thead>
             <tr>
-               <th>銀行名稱</th>
-               <th>匯率</th>
-               <th>餘額</th>
-               <th>總計</th>
+               <th>股票名稱</th>
+               <th>持有數量</th>
+               <th>單價</th>
+               <th>現價</th>
+               <th>成本</th>
                <th></th>
             </tr>
          </thead>
@@ -98,8 +99,9 @@ function Table_Banks(Orders) {
     const tr = document.createElement('tr');
     const trContent = `
         <td>${order.name}</td>
+        <td>${order.codeName}</td>
         <td>${order.rate}</td>
-        <td>${order.current}</td>
+        <td class="warning">${order.current}</td>
         <td class="warning">${order.ntd}</td>
         <td class="primary" class="text-align:right;">Details</td>
     `;
@@ -128,8 +130,8 @@ addBall("lightblue", {{ (int $total) }}, {{ (int $total) }});
 
 document.addEventListener("DOMContentLoaded",function(){
    // if(DrawChart) DrawChart();
-   var banks = {{ $assets.cash.details }}
-   Table_Banks(banks);
+   var stocks = {{ $assets.stocks.details }}
+   Table_Banks(stocks);
    AddNodes("#meter-1", ballElements[0]);
    AddNodes("#meter-2", ballElements[1]);
    AddNodes("#meter-3", ballElements[2]);
