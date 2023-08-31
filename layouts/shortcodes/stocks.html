@@ -132,7 +132,7 @@ function DrawChart() {
 {{ range $elem := $assets.stocks.details }}
    {{ if and (ne $elem.target 0) (ne $lex 7) }}
       addBall("{{ index $colorz $lex }}", {{ (int $elem.codeName) }}, {{ (int $elem.target) }});
-      {{ $lex += 1 }}
+      {{ add $lex 1 }}
    {{ end }}
 {{ end }}
 
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded",function(){
    var stocks = {{ $assets.stocks.details }}
    Table_Banks(stocks);
 {{ range $index, $num := (seq $idx) }}
-   AddNodes("#meter-{{ $index + 1 }}", ballElements[{{ $index }}]);
+   AddNodes("#meter-{{ add $index 1 }}", ballElements[{{ $index }}]);
 {{ end }}
 });
 </script>
