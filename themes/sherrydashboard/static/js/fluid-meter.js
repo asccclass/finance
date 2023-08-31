@@ -20,39 +20,39 @@ Number.prototype.numberFormat = function(c, d, t){
 const ballElements = [];
 
 // 紫色球體冒泡泡
-function addpuppleBall(initValue, maxValue) {
-   ballElements.push({borderWidth:10, initialProgress:initValue,maxProgress:maxValue,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
+function addpuppleBall(initValue, maxValue, tag) {
+   ballElements.push({borderWidth:10, initialProgress:initValue,maxProgress:maxValue,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=> tag + i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
 }
 
 // 藍色
-function addblueBall(initValue, maxValue) {
+function addblueBall(initValue, maxValue, tag) {
    ballElements.push({borderWidth:10,borderColor:"#567656",initialProgress:initValue,maxProgress:maxValue,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
 }
 
 // 綠色
-function addgreenBall(initValue, maxValue) {
+function addgreenBall(initValue, maxValue, tag) {
    ballElements.push({borderWidth:10,initialProgress:initValue,maxProgress:maxValue,borderColor:"#2a2a2a",backgroundColor:"#270100",showBubbles:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#ff4500",horizontalSpeed:p.SLOW,waveSpeed:p.SLOW}});
 }
 
 // 棕色
-function addbrownBall(initValue, maxValue) {
+function addbrownBall(initValue, maxValue, tag) {
    ballElements.push({borderWidth:10,initialProgress:initValue,maxProgress:maxValue,backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontFamily:"Codystar",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff"}});
 }
 
 // 淡藍色
-function addlightblueBall(initValue, maxValue) {
+function addlightblueBall(initValue, maxValue, tag) {
    ballElements.push({borderWidth:10,initialProgress:initValue,maxProgress:maxValue,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
 }
 
 // 不知名色
-function addxBall(initValue, maxValue) {
+function addxBall(initValue, maxValue, tag) {
    ballElements.push({borderWidth:22,initialProgress:initValue,maxProgress:maxValue,padding:0,backgroundColor:"#208000",borderColor:"#800060",showProgress:!1,showBubbles:!1,dropShadow:!1,use3D:!1,fluidConfiguration:{color:"#f8f8ff"}});
 }
 
-function addBall(name, subTotal, total) {
+function addBall(name, subTotal, total, ballName) {
    name = name.toLowerCase();
    let fc = "add" + name + "Ball";
    if(!subTotal) subTotal = 0;
    if(!total) total = 0;
-   eval(fc)(subTotal, total);
+   eval(fc)(subTotal, total, ballName);
 }
