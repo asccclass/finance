@@ -129,9 +129,9 @@ function DrawChart() {
 }
 {{ $colorz := slice "blue" "pupple" "green" "lightblue" "brown" "x" }}
 {{ $lex := 0 }}
-{{ range elem := $assets.stocks.details }}
-   {{ if and (ne elem.target 0) (ne $lex 7) }}
-      addBall("{{ index $colorz $lex }}", {{ (int elem.codeName) }}, {{ (int elem.target) }});
+{{ range $elem := $assets.stocks.details }}
+   {{ if and (ne $elem.target 0) (ne $lex 7) }}
+      addBall("{{ index $colorz $lex }}", {{ (int $elem.codeName) }}, {{ (int $elem.target) }});
       {{ $lex += 1 }}
    {{ end }}
 {{ end }}
