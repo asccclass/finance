@@ -96,6 +96,7 @@ function Table_Banks(Orders) {
    // 輸出 tr
    Orders.forEach(order => {
     order.ntd = parseFloat(order.ntd).toLocaleString();
+    order.current = parseFloat(order.current).toLocaleString();
     const tr = document.createElement('tr');
     const trContent = `
         <td>${order.name}</td>
