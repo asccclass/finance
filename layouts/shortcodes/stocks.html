@@ -89,7 +89,7 @@
 function Table_Banks(Orders) {
    // 排序
    Orders.sort(function (a, b) {
-      var c = parseInt(a.ntd), d = parseInt(b.ntd);
+      var c = parseInt(a.codeName), d = parseInt(b.codeName);
       var i = d - c;
       return (i == 0 ? 0 : (i > 0 ? 1 : -1)); 
    });
