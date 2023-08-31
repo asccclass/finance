@@ -1,0 +1,138 @@
+ {{ $time := time (int now.Unix )}}
+ {{ $monthIndex := printf "%d" $time.Month }}
+ {{ $assets := $.Site.Data.curassets }}
+{{ $total := add (int $assets.stocks.marketprice) (int $assets.found.marketprice) (int $assets.cash.marketprice) }}
+<!-- 資產 -->
+   <h1 id="title"></h1>
+   <!-- Analyses -->
+   <div class="analyse">
+      <div class="visits">
+         <div class="status">
+            <div class="info">
+               <h3>股票現值</h3>
+               <h1>{{ lang.NumFmt 0  $assets.stocks.marketprice "- . ," }}</h1>
+            </div>
+            <div class="progresss">
+               <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+               </svg>
+               <div class="percentage">
+                  <p>{{ div (int $assets.stocks.marketprice) $total }}%</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="searches">
+         <div class="status">
+            <div class="info">
+               <h3>基金現值</h3>
+               <h1>{{ lang.NumFmt 0  $assets.found.marketprice "- . ," }}</h1>
+            </div>
+            <div class="progresss">
+               <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+               </svg>
+               <div class="percentage">
+                  <p>+21%</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- End of Analyses -->
+   <!-- New Users Section -->
+   <div class="new-users">
+      <h2>資產與目標</h2>
+      <div class="user-list">
+         <div class="meters">
+            <div id="meter-1" class="meter-container">
+               <div class="meter"></div>
+               <h2 title="目標：500萬">現金</h2>
+            </div>
+            <div id="meter-2" class="meter-container">
+               <div class="meter"></div>
+               <h2>股票</h2>
+            </div>
+            <div id="meter-3" class="meter-container">
+               <div class="meter"></div>
+               <h2>基金/債劵</h2>
+            </div>
+            <div id="meter-4" class="meter-container">
+               <div class="meter"></div>
+               <h2>總資產</h2>
+            </div>
+          </div>
+      </div>
+   </div>
+   <!-- End of New Users Section -->
+   <!-- Recent Orders Table -->
+   <div class="recent-orders">
+      <h2>各銀行餘額</h2>
+      <table>
+         <thead>
+            <tr>
+               <th>銀行名稱</th>
+               <th>匯率</th>
+               <th>餘額</th>
+               <th>總計</th>
+               <th></th>
+            </tr>
+         </thead>
+         <tbody></tbody>
+      </table>
+      <a href="#">Show All article</a>
+   </div>
+   <!-- End of Recent Orders -->
+
+<script>
+function Table_Banks(Orders) {
+   // 排序
+   Orders.sort(function (a, b) {
+      var c = parseInt(a.ntd), d = parseInt(b.ntd);
+      var i = d - c;
+      return (i == 0 ? 0 : (i > 0 ? 1 : -1)); 
+   });
+   // 輸出 tr
+   Orders.forEach(order => {
+    order.ntd = parseFloat(order.ntd).toLocaleString();
+    const tr = document.createElement('tr');
+    const trContent = `
+        <td>${order.name}</td>
+        <td>${order.rate}</td>
+        <td>${order.current}</td>
+        <td class="warning">${order.ntd}</td>
+        <td class="primary" class="text-align:right;">Details</td>
+    `;
+    tr.innerHTML = trContent;
+    document.querySelector('table tbody').appendChild(tr);
+   });
+}
+
+function DrawChart() {
+   var chart = bb.generate({
+     data: {
+       columns: [
+	   ["data1", 30],
+	   ["data2", 120]
+       ],
+       type: "pie" // for ESM specify as: pie()
+     },
+     bindto: "#pieChart"
+   });
+   chart.load({});
+}
+addBall("Blue", {{ (int $assets.cash.cost) }}, {{ 5000000 }});
+addBall("pupple", {{ (int $assets.stocks.marketprice) }}, {{ (int $assets.stocks.marketprice) }});
+addBall("green", {{ (int $assets.found.marketprice) }}, {{ (int $assets.found.marketprice) }});
+addBall("lightblue", {{ (int $total) }}, {{ (int $total) }});
+
+document.addEventListener("DOMContentLoaded",function(){
+   // if(DrawChart) DrawChart();
+   var banks = {{ $assets.cash.details }}
+   Table_Banks(banks);
+   AddNodes("#meter-1", ballElements[0]);
+   AddNodes("#meter-2", ballElements[1]);
+   AddNodes("#meter-3", ballElements[2]);
+   AddNodes("#meter-4", ballElements[3]);
+});
+</script>
