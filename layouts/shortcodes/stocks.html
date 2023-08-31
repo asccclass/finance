@@ -127,18 +127,21 @@ function DrawChart() {
    });
    chart.load({});
 }
-addBall("Blue", {{ (int $assets.cash.cost) }}, {{ 5000000 }});
-addBall("pupple", {{ (int $assets.stocks.marketprice) }}, {{ (int $assets.stocks.marketprice) }});
-addBall("green", {{ (int $assets.found.marketprice) }}, {{ (int $assets.found.marketprice) }});
-addBall("lightblue", {{ (int $total) }}, {{ (int $total) }});
+{{ $colorz := ["blue", "pupple", :"green", "lightblue", "brown", "x"] }}
+{{ $lex := 0 }}
+{{ range $idx, elem := $assets.stocks.details }}
+   {{ if and (ne elem.target 0) (ne $lex 7) }}
+      addBall("{{ index $colorz $lex }}", {{ (int elem.codeName) }}, {{ (int elem.target) }});
+      {{ $lex += 1 }}
+   {{ end }}
+{{ end }}
 
 document.addEventListener("DOMContentLoaded",function(){
    // if(DrawChart) DrawChart();
    var stocks = {{ $assets.stocks.details }}
    Table_Banks(stocks);
-   AddNodes("#meter-1", ballElements[0]);
-   AddNodes("#meter-2", ballElements[1]);
-   AddNodes("#meter-3", ballElements[2]);
-   AddNodes("#meter-4", ballElements[3]);
+{{ range $index, $num := (seq $idx) }}
+   AddNodes("#meter-{{ $index + 1 }}", ballElements[{{ $index }}]);
+{{ end }}
 });
 </script>
