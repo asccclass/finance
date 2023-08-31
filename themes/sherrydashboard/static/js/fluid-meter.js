@@ -21,7 +21,7 @@ const ballElements = [];
 
 // 紫色球體冒泡泡
 function addpuppleBall(initValue, maxValue, tag) {
-   ballElements.push({borderWidth:10, initialProgress:initValue,maxProgress:maxValue,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=> tag + i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
+   ballElements.push({borderWidth:10, initialProgress:initValue,maxProgress:maxValue,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
 }
 
 // 藍色
