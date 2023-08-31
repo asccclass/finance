@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded",function(){
    // if(DrawChart) DrawChart();
    var stocks = {{ $assets.stocks.details }}
    Table_Banks(stocks);
-{{ range $index, $num := (seq $idx) }}
+{{ range $index, $num := (seq $lex) }}
    AddNodes("#meter-{{ add $index 1 }}", ballElements[{{ $index }}]);
 {{ end }}
 });
