@@ -56,7 +56,7 @@ function addBall(name, subTotal, total, ballName) {
    if(!total) total = 0;
    eval(fc)(subTotal, total, ballName);
    if(ballName) {
-      let elem = document.querySelect(name + "Tag");
+      let elem = document.querySelector(name + "Tag");
       if(elem)  elem.innerHTML = ballName;
    }
 }
