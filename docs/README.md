@@ -6,6 +6,8 @@
 
 ### 如何增加球型圖式
 
+若是只希望顯示單行，則 addBall 數量最好不要超過5個，避免畫面放不下或折行。
+
 ```
 // HTML
 <div id="meter-1" class="meter-container">
