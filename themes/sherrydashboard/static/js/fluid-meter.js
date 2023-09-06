@@ -2,6 +2,10 @@ var L=Object.defineProperty;var y=Object.getOwnPropertySymbols;var F=Object.prot
 const m=(i,t)=>{const s=new E(i.querySelector(".meter"),t),e=i.querySelector("input"),o=i.querySelector("button");return o==null||o.addEventListener("click",()=>{const h=Number(e==null?void 0:e.value);if(isNaN(h)){alert("invalid progress. Number between 0 and 100");return}s.progress=h}),s};
 
 function AddNodes(elemID, elem) {
+   if(elem.ballName) {
+      let tagElem = document.querySelector(elemID + "Tag");
+      if(tagElem)  tagElem.innerHTML = elem.ballName;
+   }
    return m(document.querySelector(elemID), elem);
 }
 
@@ -21,32 +25,32 @@ const ballElements = [];
 
 // 紫色球體冒泡泡
 function addpuppleBall(initValue, maxValue, tag) {
-   ballElements.push({borderWidth:10, initialProgress:initValue,maxProgress:maxValue,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"}});
+   ballElements.push({borderWidth:10, initialProgress:initValue,maxProgress:maxValue,borderColor:"#dadada",backgroundColor:"#dadada",showBubbles:!0,dropShadow:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#800080"},ballName:tag});
 }
 
 // 藍色
 function addblueBall(initValue, maxValue, tag) {
-   ballElements.push({borderWidth:10,borderColor:"#567656",initialProgress:initValue,maxProgress:maxValue,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
+   ballElements.push({borderWidth:10,borderColor:"#567656",initialProgress:initValue,maxProgress:maxValue,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST,ballName:tag}});
 }
 
 // 綠色
 function addgreenBall(initValue, maxValue, tag) {
-   ballElements.push({borderWidth:10,initialProgress:initValue,maxProgress:maxValue,borderColor:"#2a2a2a",backgroundColor:"#270100",showBubbles:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#ff4500",horizontalSpeed:p.SLOW,waveSpeed:p.SLOW}});
+   ballElements.push({borderWidth:10,initialProgress:initValue,maxProgress:maxValue,borderColor:"#2a2a2a",backgroundColor:"#270100",showBubbles:!1,fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#ff4500",horizontalSpeed:p.SLOW,waveSpeed:p.SLOW},ballName:tag});
 }
 
 // 棕色
 function addbrownBall(initValue, maxValue, tag) {
-   ballElements.push({borderWidth:10,initialProgress:initValue,maxProgress:maxValue,backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontFamily:"Codystar",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff"}});
+   ballElements.push({borderWidth:10,initialProgress:initValue,maxProgress:maxValue,backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontFamily:"Codystar",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff"},ballName:tag});
 }
 
 // 淡藍色
 function addlightblueBall(initValue, maxValue, tag) {
-   ballElements.push({borderWidth:10,initialProgress:initValue,maxProgress:maxValue,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST}});
+   ballElements.push({borderWidth:10,initialProgress:initValue,maxProgress:maxValue,use3D:!1,fontFamily:"Shizuru",backgroundColor:"#002d59",borderColor:"#3e4954",bubbleColor:"#6bcfff",fontSize:24,progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#1e90ff",horizontalSpeed:p.FAST,waveSpeed:p.FAST},ballName:tag});
 }
 
 // 不知名色
 function addxBall(initValue, maxValue, tag) {
-   ballElements.push({borderWidth:22,initialProgress:initValue,maxProgress:maxValue,padding:0,backgroundColor:"#208000",borderColor:"#800060",showProgress:!1,showBubbles:!1,dropShadow:!1,use3D:!1,fluidConfiguration:{color:"#f8f8ff"}});
+   ballElements.push({borderWidth:22,initialProgress:initValue,maxProgress:maxValue,padding:0,backgroundColor:"#208000",borderColor:"#800060",showProgress:!1,showBubbles:!1,dropShadow:!1,use3D:!1,fluidConfiguration:{color:"#f8f8ff"},ballName:tag});
 }
 
 function addBall(name, subTotal, total, ballName) {
@@ -55,8 +59,4 @@ function addBall(name, subTotal, total, ballName) {
    if(!subTotal) subTotal = 0;
    if(!total) total = 0;
    eval(fc)(subTotal, total, ballName);
-   if(ballName) {
-      let elem = document.querySelector(name + "Tag");
-      if(elem)  elem.innerHTML = ballName;
-   }
 }
