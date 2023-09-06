@@ -30,7 +30,7 @@ function addpuppleBall(initValue, maxValue, tag) {
 
 // 藍色
 function addblueBall(initValue, maxValue, tag) {
-   ballElements.push({borderWidth:10,borderColor:"#567656",initialProgress:initValue,maxProgress:maxValue,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST,ballName:tag}});
+   ballElements.push({borderWidth:10,borderColor:"#567656",initialProgress:initValue,maxProgress:maxValue,fontSize:24,backgroundColor:"#2d3d2d",textColor:"#80cd32",fontFamily:"Creepster",progressFormatter:i=>i.numberFormat(0, '.', ','),fluidConfiguration:{color:"#adff2f",horizontalSpeed:p.FAST,waveSpeed:p.FAST},ballName:tag});
 }
 
 // 綠色
