@@ -65,6 +65,10 @@
                <div class="meter"></div>
                <h2 id="meter-5Tag"></h2>
             </div>
+            <div id="meter-6" class="meter-container">
+               <div class="meter"></div>
+               <h2 id="meter-6Tag"></h2>
+            </div>
           </div>
       </div>
    </div>
@@ -81,7 +85,7 @@
                <th>單價</th>
                <th>現價</th>
                <th>成本</th>
-               <th>尚欠</th>
+               <th>目標</th>
                <th></th>
             </tr>
          </thead>
@@ -137,7 +141,7 @@ function DrawChart() {
 {{ $lex := 0 }}
 {{ range $elem := $assets.stocks.details }}
    {{ if (and (ne (int $elem.target) 0) (le $lex 5)) }}
-      addBall("{{ index $colorz $lex }}", parseInt({{ (int $elem.codeName) }}), parseInt({{ (int $elem.target) }}), "{{ $elem.name }}");
+      addBall("{{ index $colorz $lex }}", {{(int $elem.codeName)}}, {{(int $elem.target)}}, "{{ $elem.name }}");
       {{ $lex = add $lex 1 }}
    {{ end }}
 {{ end }}
