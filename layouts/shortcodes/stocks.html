@@ -135,7 +135,7 @@ function DrawChart() {
 {{ $lex := 0 }}
 {{ range $elem := $assets.stocks.details }}
    {{ if (and (ne (int $elem.target) 0) (le $lex 5)) }}
-      addBall("{{ index $colorz $lex }}", {{ (int $elem.codeName) }}, {{ (int $elem.target) }}, "{{ $elem.name }}");
+      addBall("{{ index $colorz $lex }}", parseInt({{ (int $elem.codeName) }}), parseInt({{ (int $elem.target) }}), "{{ $elem.name }}");
       {{ $lex = add $lex 1 }}
    {{ end }}
 {{ end }}
