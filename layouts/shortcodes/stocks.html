@@ -137,10 +137,10 @@ function DrawChart() {
    });
    chart.load({});
 }
-{{ $colorz := slice "blue" "pupple" "green" "lightblue" "brown" "x" }}
+{{ $colorz := slice "blue" "pupple" "green" "lightblue" "brown" }}
 {{ $lex := 0 }}
 {{ range $elem := $assets.stocks.details }}
-   {{ if (and (ne (int $elem.target) 0) (le $lex 5)) }}
+   {{ if (and (ne (int $elem.target) 0) (le $lex 4)) }}
       addBall("{{ index $colorz $lex }}", {{(int $elem.codeName)}}, {{(int $elem.target)}}, "{{ $elem.name }}");
       {{ $lex = add $lex 1 }}
    {{ end }}
