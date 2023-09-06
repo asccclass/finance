@@ -17,7 +17,7 @@
                   <circle cx="38" cy="38" r="36"></circle>
                </svg>
                <div class="percentage">
-                  <p>{{ div (int $assets.stocks.marketprice) $total }}%</p>
+                  <p>{{ $total }}-{{ div (int $assets.stocks.marketprice) $total }}%</p>
                </div>
             </div>
          </div>
