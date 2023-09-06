@@ -75,6 +75,7 @@
       <table>
          <thead>
             <tr>
+               <th></th>
                <th>股票名稱</th>
                <th>持有數量</th>
                <th>單價</th>
@@ -105,6 +106,7 @@ function Table_Banks(Orders) {
     order.codeName = parseFloat(order.codeName).toLocaleString();
     const tr = document.createElement('tr');
     const trContent = `
+        <td></td>
         <td>${order.name}</td>
         <td>${order.codeName}</td>
         <td>${order.rate}</td>
