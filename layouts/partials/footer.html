@@ -5,8 +5,17 @@ document.body.addEventListener('htmx:load', function(evt) {  // HTMX 載入事�
    const queryString = window.location.search;
    const urlParams = new URLSearchParams(queryString);
    const token = urlParams.get('code');
-   // /line/me
-console.log(token);
+   $.ajax({
+      type :"GET",
+      url  : "https://www.justdrink.com.tw/line/me",
+      data : { 
+         accesstoken: token,                            
+      },
+      dataType: "text",
+      success : function(res) {
+         console.log(res);
+      }
+   });
 });
 
 document.body.addEventListener('htmx:configRequest', function(evt) {  // 送出任何AJAX命令前
