@@ -7,7 +7,7 @@ document.body.addEventListener('htmx:load', function(evt) {  // HTMX 載入事�
    const token = urlParams.get('code');
    $.ajax({
       type :"GET",
-      url  : "https://www.justdrink.com.tw/line/me",
+      url  : "https://www.justdrink.com.tw/weareparents/line/me",
       data : { 
          accesstoken: token,                            
       },
