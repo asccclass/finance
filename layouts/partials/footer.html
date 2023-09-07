@@ -11,6 +11,7 @@ document.body.addEventListener('htmx:load', function(evt) {  // HTMX 載入事�
       data : { 
          accesstoken: token,                            
       },
+      headers: { 'Host': 'finance.justdrink.com.tw' },
       dataType: "text",
       success : function(res) {
          console.log(res);
