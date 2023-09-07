@@ -4,7 +4,7 @@
 document.body.addEventListener('htmx:load', function(evt) {  // HTMX 載入事件
    const queryString = window.location.search;
    const urlParams = new URLSearchParams(queryString);
-   const token = urlParams.get('accesstoken');
+   const token = urlParams.get('code');
    // /line/me
 console.log(token);
 });
