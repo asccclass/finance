@@ -3,7 +3,7 @@
 <script>
 document.body.addEventListener('htmx:load', function(evt) {  // HTMX 載入事件
    // let x = evt.headers.get('Authorization');
-console.log(evt);
+console.log(document.cookie);
 });
 
 document.body.addEventListener('htmx:configRequest', function(evt) {  // 送出任何AJAX命令前
