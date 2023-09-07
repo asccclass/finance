@@ -2,9 +2,11 @@
 <div class="" style="align:center">copyright 2023. By Liu Chih Han</div>
 <script>
 document.body.addEventListener('htmx:load', function(evt) {  // HTMX 載入事件
-   // let x = evt.headers.get('Authorization');
-console.log(document.cookie);
-console.log(evt.detail.headers);
+   const queryString = window.location.search;
+   const urlParams = new URLSearchParams(queryString);
+   const token = urlParams.get('accesstoken');
+   // /line/me
+console.log(token);
 });
 
 document.body.addEventListener('htmx:configRequest', function(evt) {  // 送出任何AJAX命令前
