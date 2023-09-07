@@ -2,8 +2,8 @@
 <div class="" style="align:center">copyright 2023. By Liu Chih Han</div>
 <script>
 document.body.addEventListener('htmx:load', function(evt) {  // HTMX 載入事件
-   let x = evt.headers.get('Authorization');
-console.log(x);
+   // let x = evt.headers.get('Authorization');
+console.log(evt);
 });
 
 document.body.addEventListener('htmx:configRequest', function(evt) {  // 送出任何AJAX命令前
