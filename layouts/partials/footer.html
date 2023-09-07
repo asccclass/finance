@@ -1,7 +1,13 @@
 
 <div class="" style="align:center">copyright 2023. By Liu Chih Han</div>
 <script>
-document.body.addEventListener('htmx:load', function(evt) {
-  console.log("Hello htmx world");
+document.body.addEventListener('htmx:load', function(evt) {  // HTMX 載入事件
+   let x = evt.headers.get('Authorization');
+console.log(x);
+});
+
+document.body.addEventListener('htmx:configRequest', function(evt) {  // 送出任何AJAX命令前
+   // evt.detail.parameters['auth_token'] = getAuthToken(); // add a new parameter into the request
+   // evt.detail.headers['Authentication-Token'] = getAuthToken(); // add a new header into the request
 });
 </script>
