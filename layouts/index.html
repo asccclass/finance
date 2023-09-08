@@ -129,7 +129,7 @@
    </div>
    <!-- End of Recent Orders -->
 <script>
-addBall("Blue", {{ sub $revenue.marketprice $lifeFee }}, {{ $revenue.marketprice }}, "本月收入");
+addBall("Blue", {{ sub (int $revenue.marketprice) $lifeFee }}, {{ (int $revenue.marketprice) }}, "本月收入");
 addBall("pupple", 4140, 49680);
 addBall("green", 5300, 63600);
 addBall("lightblue", {{ $investFee }}, {{ $investFee }});
