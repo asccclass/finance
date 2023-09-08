@@ -6,6 +6,7 @@
    {{ $curBalance := $.Site.Data.curmonth.balance }}
    {{ $curIncomelen := $curIncome.summary | len }}
    {{ $expense := $.Site.Data.curexpanse }}
+   {{ $revenue := $.Site.Data.curassets.revenue }}
    <h1>{{.Title}}</h1>
    <!-- Analyses -->
    <div class="analyse">
@@ -87,7 +88,7 @@
          <div class="meters">
             <div id="meter-1" class="meter-container">
                <div class="meter"></div>
-               <h2>生活費（街口）</h2>
+               <h2 "meter-1Tag" title="薪資、勞保撫卹、房租（不含投資收入）">總收入</h2>
             </div>
             <div id="meter-4" class="meter-container">
                <div class="meter"></div>
@@ -128,7 +129,7 @@
    </div>
    <!-- End of Recent Orders -->
 <script>
-addBall("Blue", {{ sub 31800 $lifeFee }}, 31800);
+addBall("Blue", {{ sub $revenue.marketprice $lifeFee }}, {{ $revenue.marketprice }}, "本月收入");
 addBall("pupple", 4140, 49680);
 addBall("green", 5300, 63600);
 addBall("lightblue", {{ $investFee }}, {{ $investFee }});
