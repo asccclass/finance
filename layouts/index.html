@@ -99,7 +99,7 @@
             </div>
             <div id="meter-3" class="meter-container">
                <div class="meter"></div>
-               <h2>年度費用（王道）</h2>
+               <h2 id="meter-3Tag"></h2>
             </div>
             <div id="meter-4" class="meter-container">
                <div class="meter"></div>
@@ -133,8 +133,8 @@
    <!-- End of Recent Orders -->
 <script>
 addBall("Blue", {{ sub 35000 $lifeFee }}, {{ (int 35000) }}, "生活費餘額");
-addBall("lightblue", {{ $investFee }}, {{ $investFee }}, "投資理財（永豐）");
-addBall("pupple", 4140, 49680);
+addBall("lightblue", {{ sub 15000 $investFee }}, 15000, "投資理財（永豐）");
+addBall("pupple", 4140, 12891, "年度費用（王道）");
 addBall("green", {{ sub 1000000, $reserved.marketprice}}, 1000000, "風險規避（上海商銀）");  // 目標：1百萬
 addBall("brown", {{ (int $parents.marketprice) }}, {{ (int $parents.marketprice) }}, "孝親費（富邦）");
 
