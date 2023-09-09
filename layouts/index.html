@@ -135,7 +135,7 @@
 addBall("Blue", {{ sub 35000 $lifeFee }}, 35000, "生活費餘額");
 addBall("lightblue", {{ sub 15000 $investFee }}, 15000, "投資理財（永豐）");
 addBall("pupple", 4140, 12891, "年度費用（王道）");
-addBall("green", {{ sub 1000000 (int $reserved.marketprice) }}, 1000000, "風險規避（上海商銀）");  // 目標：1百萬
+addBall("green", {{ (int $reserved.marketprice) }}, 1000000, "風險規避（上海商銀）");  // 目標：1百萬
 addBall("brown", {{ (int $parents.marketprice) }}, {{ (int $parents.marketprice) }}, "孝親費（富邦）");
 
 document.addEventListener("DOMContentLoaded",function(){
