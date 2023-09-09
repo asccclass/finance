@@ -66,7 +66,7 @@
 {{ $investFee := 0 }} <!-- 投資 -->
 {{ range $elem := $expense.details }}
    {{ if ne $elem.codeName "年度費用" "風險規劃"}}
-      {{ if ne $elem.codeName "投資" }}
+      {{ if ne $elem.codeName "投資" "其他" }}
          {{ if eq $elem.codeName "育" }}
             {{ if ne $elem.target "兒子" "孝親費" }}
                {{ $lifeFee = add $lifeFee (int $elem.ntd) }}
