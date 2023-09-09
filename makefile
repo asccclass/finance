@@ -9,9 +9,7 @@ assets:
 curmonth:
 	git add data/mcycle.json
 	git commit -m "<docs>更新財務狀況一覽表資料檔 at ${dt}" 
-
-all: assets parents s
-
-
 s:
 	git push -u origin main
+
+all: assets parents s
