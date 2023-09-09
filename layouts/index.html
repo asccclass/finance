@@ -76,6 +76,10 @@
                {{ $lifeFee = add $lifeFee (int $elem.ntd) }}
             {{ end }}
          {{ end }}
+      {{ else }}
+         {{ if eq $elem.codeName "投資" }}
+             {{ $investFee = add $investFee (int $elem.ntd) }}
+         {{ end }}
       {{ end }}
    {{ end }}
 {{ end }}
