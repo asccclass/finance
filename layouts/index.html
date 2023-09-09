@@ -69,7 +69,7 @@
       {{ if ne $elem.codeName "投資" }}
          {{ if eq $elem.codeName "育" }}
             {{ if eq $elem.target "孝親費" }}
-               {{ $parentsFee = add $parentsFee (int $detail.ntd)}}
+               {{ $parentsFee = add $parentsFee (int $elem.ntd)}}
             {{ end }}
          {{ else }}
             {{ $lifeFee = add $lifeFee (int $elem.ntd) }}
