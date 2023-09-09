@@ -5,7 +5,7 @@
    {{ $curExpense := $.Site.Data.curmonth.expense }}
    {{ $curBalance := $.Site.Data.curmonth.balance }}
    {{ $curIncomelen := $curIncome.summary | len }}
-   {{ $expense := $.Site.Data.curexpanse }}
+   {{ $expense := $.Site.Data.curassets.expanse }}
    {{ $revenue := $.Site.Data.curassets.revenue }}
    <h1>{{.Title}}</h1>
    <!-- Analyses -->
@@ -64,19 +64,19 @@
 {{ $lifeFee := 0 }}  <!-- 生活費 -->
 {{ $investFee := 0 }} <!-- 投資 -->
 {{ $parentsFee := 0 }} <!-- 孝親費 -->
-{{ range $elem := $expense.summary }}
-   {{ if ne $elem.title "投資" }}
-      {{ if eq $elem.title "育" }}
-         {{ range $detail := $elem.detail }}
-            {{ if eq $detail.subAccount "孝親費" }}
-               {{ $parentsFee = add $parentsFee $detail.cnt }}
+{{ range $elem := $expense.details }}
+   {{ if ne $elem.codeName "房貸" "年度費用" "風險規劃"}}
+      {{ if ne $elem.codeName "投資" }}
+         {{ if eq $elem.codeName "育" }}
+            {{ if eq $elem.target "孝親費" }}
+               {{ $parentsFee = add $parentsFee (int $detail.ntd)}}
             {{ end }}
+         {{ else }}
+            {{ $lifeFee = add $lifeFee (int $elem.ntd) }}
          {{ end }}
       {{ else }}
-         {{ $lifeFee = add $lifeFee $elem.total }}
+         {{ $investFee = add $investFee (int $elem.ntd) }}
       {{ end }}
-   {{ else }}
-      {{ $investFee = add $investFee $elem.total }}
    {{ end }}
 {{ end }}
 </font>
@@ -88,7 +88,7 @@
          <div class="meters">
             <div id="meter-1" class="meter-container">
                <div class="meter"></div>
-               <h2 id="meter-1Tag" title="薪資、勞保撫卹、房租（不含投資收入）">總收入</h2>
+               <h2 id="meter-1Tag"></h2>
             </div>
             <div id="meter-4" class="meter-container">
                <div class="meter"></div>
@@ -129,7 +129,7 @@
    </div>
    <!-- End of Recent Orders -->
 <script>
-addBall("Blue", {{ sub (int $revenue.marketprice) $lifeFee }}, {{ (int $revenue.marketprice) }}, "本月收入餘額");
+addBall("Blue", {{ sub (int $revenue.marketprice) $lifeFee }}, {{ (int $revenue.marketprice) }}, "生活費餘額");
 addBall("pupple", 4140, 49680);
 addBall("green", 5300, 63600);
 addBall("lightblue", {{ $investFee }}, {{ $investFee }});
