@@ -96,7 +96,7 @@
             </div>
             <div id="meter-3" class="meter-container">
                <div class="meter"></div>
-               <h2>年度費用（王道）</h2>
+               <h2>年度費用（王道）{{ $lifeFee }}</h2>
             </div>
             <div id="meter-4" class="meter-container">
                <div class="meter"></div>
@@ -133,7 +133,7 @@ addBall("Blue", {{ sub 31800 $lifeFee }}, {{ (int 31800) }}, "生活費餘額");
 addBall("lightblue", {{ $investFee }}, {{ $investFee }}, "投資理財（永豐）");
 addBall("pupple", 4140, 49680);
 addBall("green", 5300, 63600);
-addBall("brown", {{ $parents.marketprice }}, {{ $parents.marketprice}}, "孝親費（富邦）");
+addBall("brown", {{ (int $parents.marketprice) }}, {{ (int $parents.marketprice) }}, "孝親費（富邦）");
 
 document.addEventListener("DOMContentLoaded",function(){
    AddNodes("#meter-1", ballElements[0]);
