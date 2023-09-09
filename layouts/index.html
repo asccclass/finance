@@ -5,6 +5,7 @@
    {{ $curExpense := $.Site.Data.curmonth.expense }}
    {{ $curBalance := $.Site.Data.curmonth.balance }}
    {{ $curIncomelen := $curIncome.summary | len }}
+   {{ $parents := $parents.ParentsFee }}
    {{ $expense := $.Site.Data.curassets.expanse }}
    {{ $revenue := $.Site.Data.curassets.revenue }}
    <h1>{{.Title}}</h1>
@@ -30,7 +31,7 @@
          <div class="status">
             <div class="info">
                <h3>本月支出</h3>
-               <h1>{{ lang.NumFmt 0  $curExpense.total "- . ," }}</h1>
+               <h1>{{ lang.NumFmt 0  $expense.marketprice "- . ," }}</h1>
             </div>
             <div class="progresss">
                <svg>
@@ -63,13 +64,12 @@
 <font color="white">
 {{ $lifeFee := 0 }}  <!-- 生活費 -->
 {{ $investFee := 0 }} <!-- 投資 -->
-{{ $parentsFee := 0 }} <!-- 孝親費 -->
 {{ range $elem := $expense.details }}
    {{ if ne $elem.codeName "房貸" "年度費用" "風險規劃"}}
       {{ if ne $elem.codeName "投資" }}
          {{ if eq $elem.codeName "育" }}
-            {{ if eq $elem.target "孝親費" }}
-               {{ $parentsFee = add $parentsFee (int $elem.ntd)}}
+            {{ if ne $elem.target "兒子" "孝親費" }}
+               {{ $lifeFee = add $lifeFee (int $elem.ntd) }}
             {{ end }}
          {{ else }}
             {{ $lifeFee = add $lifeFee (int $elem.ntd) }}
@@ -90,21 +90,21 @@
                <div class="meter"></div>
                <h2 id="meter-1Tag"></h2>
             </div>
-            <div id="meter-4" class="meter-container">
-               <div class="meter"></div>
-               <h2>投資理財（永豐）</h2>
-            </div>
             <div id="meter-2" class="meter-container">
+               <div class="meter"></div>
+               <h2 id="meter-2Tag"></h2>
+            </div>
+            <div id="meter-3" class="meter-container">
                <div class="meter"></div>
                <h2>年度費用（王道）</h2>
             </div>
-            <div id="meter-3" class="meter-container">
+            <div id="meter-4" class="meter-container">
                <div class="meter"></div>
                <h2>風險規避（上海商銀）</h2>
             </div>
             <div id="meter-5" class="meter-container">
                <div class="meter"></div>
-               <h2>孝親費（富邦）</h2>
+               <h2 id="meter-5Tag"></h2>
             </div>
           </div>
       </div>
@@ -129,11 +129,11 @@
    </div>
    <!-- End of Recent Orders -->
 <script>
-addBall("Blue", {{ sub (int $revenue.marketprice) $lifeFee }}, {{ (int $revenue.marketprice) }}, "生活費餘額");
+addBall("Blue", {{ sub 31800 $lifeFee }}, {{ (int 31800) }}, "生活費餘額");
+addBall("lightblue", {{ $investFee }}, {{ $investFee }}, "投資理財（永豐）");
 addBall("pupple", 4140, 49680);
 addBall("green", 5300, 63600);
-addBall("lightblue", {{ $investFee }}, {{ $investFee }});
-addBall("brown", {{ $parentsFee }}, 200000);
+addBall("brown", {{ $parents.marketprice }}, {{ $parents.marketprice}}, "孝親費（富邦）");
 
 document.addEventListener("DOMContentLoaded",function(){
    AddNodes("#meter-1", ballElements[0]);
