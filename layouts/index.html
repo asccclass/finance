@@ -1,14 +1,13 @@
 {{ define "main" }}
    {{ $time := time (int now.Unix )}}
    {{ $monthIndex := printf "%d" $time.Month }}
-   {{ $curIncome := $.Site.Data.curmonth.income }}
    {{ $curExpense := $.Site.Data.curmonth.expense }}
    {{ $curBalance := $.Site.Data.curmonth.balance }}
-   {{ $curIncomelen := $curIncome.summary | len }}
    {{ $parents := $.Site.Data.parents.ParentsFee }}
    {{ $expense := $.Site.Data.curassets.expense }}
    {{ $revenue := $.Site.Data.curassets.revenue }}
    {{ $reserved := $.Site.Data.reservefund.rvFound }}
+   {{ $annual := $.Site.Data.annualfund.annual }}
    <h1>{{.Title}}</h1>
    <!-- Analyses -->
    <div class="analyse">
@@ -23,7 +22,7 @@
                 <circle cx="38" cy="38" r="36"></circle>
               </svg>
               <div class="percentage">
-                 <p>{{ $curIncome.increase }}</p>
+                 <p>10%</p>
               </div>
            </div>
          </div>
@@ -134,7 +133,7 @@
 <script>
 addBall("Blue", {{ sub 35000 $lifeFee }}, 35000, "生活費餘額");
 addBall("lightblue", {{ sub 15000 $investFee }}, 15000, "投資理財（永豐）");
-addBall("pupple", 4140, 12891, "年度費用（王道）");
+addBall("pupple", {{ (int $annual.markprice) }}, 12891, "年度費用（王道）");
 addBall("green", {{ (int $reserved.marketprice) }}, 1000000, "風險規避（上海商銀）");  // 目標：1百萬
 addBall("brown", {{ (int $parents.marketprice) }}, {{ (int $parents.marketprice) }}, "孝親費（富邦）");
 
