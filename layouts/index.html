@@ -5,7 +5,7 @@
    {{ $curExpense := $.Site.Data.curmonth.expense }}
    {{ $curBalance := $.Site.Data.curmonth.balance }}
    {{ $curIncomelen := $curIncome.summary | len }}
-   {{ $parents := $parents.ParentsFee }}
+   {{ $parents := $.Site.Data.parents.ParentsFee }}
    {{ $expense := $.Site.Data.curassets.expanse }}
    {{ $revenue := $.Site.Data.curassets.revenue }}
    <h1>{{.Title}}</h1>
