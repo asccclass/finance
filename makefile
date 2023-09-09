@@ -1,5 +1,8 @@
 dt := $(shell date "+%G-%m-%d %H:%M:%S")
 
+annual:
+	git add data/annualfund.json
+	git commit -m "<docs>更新年度費用檔at ${dt}"
 parents:
 	git add data/parents.json
 	git commit -m "<docs>更新孝親費檔 at ${dt}"
@@ -12,4 +15,4 @@ curmonth:
 s:
 	git push -u origin main
 
-all: assets parents s
+all: assets parents annual s
