@@ -48,7 +48,7 @@
          <div class="status">
             <div class="info">
                <h3>本月餘額</h3>
-               <h1>{{ lang.NumFmt 0 (sub $curIncome.total $curExpense.total) "- . ," }}</h1>
+               <h1>{{ lang.NumFmt 0 (sub $revenue.marketprice $expense.marketprice) "- . ," }}</h1>
             </div>
             <div class="progresss">
                <svg>
