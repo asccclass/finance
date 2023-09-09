@@ -14,7 +14,7 @@
          <div class="status">
            <div class="info">
               <h3>本月收入</h3>
-              <h1>{{ lang.NumFmt 0  $curIncome.total "- . ," }}</h1>
+              <h1>{{ lang.NumFmt 0  $revenue.marketprice "- . ," }}</h1>
            </div>
            <div class="progresss">
               <svg>
@@ -129,7 +129,7 @@
    </div>
    <!-- End of Recent Orders -->
 <script>
-addBall("Blue", {{ sub (int $revenue.marketprice) $lifeFee }}, {{ (int $revenue.marketprice) }}, "本月收入");
+addBall("Blue", {{ sub (int $revenue.marketprice) $lifeFee }}, {{ (int $revenue.marketprice) }}, "本月收入餘額");
 addBall("pupple", 4140, 49680);
 addBall("green", 5300, 63600);
 addBall("lightblue", {{ $investFee }}, {{ $investFee }});
