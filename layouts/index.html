@@ -76,8 +76,6 @@
                {{ $lifeFee = add $lifeFee (int $elem.ntd) }}
             {{ end }}
          {{ end }}
-      {{ else }}
-         {{ $investFee = add $investFee (int $elem.ntd) }}
       {{ end }}
    {{ end }}
 {{ end }}
@@ -133,7 +131,7 @@
 <script>
 addBall("Blue", {{ sub 35000 $lifeFee }}, 35000, "生活費餘額");
 addBall("lightblue", {{ sub 15000 $investFee }}, 15000, "投資理財（永豐）");
-addBall("pupple", {{ (int $annual.marketprice) }}, 12891, "年度費用（王道）");
+addBall("pupple", {{ (int $annual.marketprice) }}, 154692, "年度費用（王道）");
 addBall("green", {{ (int $reserved.marketprice) }}, 1000000, "風險規避（上海商銀）");  // 目標：1百萬
 addBall("brown", {{ (int $parents.marketprice) }}, {{ (int $parents.marketprice) }}, "孝親費（富邦）");
 
