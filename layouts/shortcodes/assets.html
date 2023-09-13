@@ -75,7 +75,7 @@
             </div>
             <div id="meter-4" class="meter-container">
                <div class="meter"></div>
-               <h2>總資產</h2>
+               <h2 id="meter-4Tag" title="目標：5千萬"></h2>
             </div>
           </div>
       </div>
@@ -140,7 +140,7 @@ function DrawChart() {
 addBall("Blue", {{ (int $assets.cash.marketprice) }}, 5000000, "現金");
 addBall("pupple", {{ (int $assets.stocks.marketprice) }}, {{ (int $assets.stocks.marketprice) }});
 addBall("green", {{ (int $assets.found.marketprice) }}, {{ (int $assets.found.marketprice) }});
-addBall("lightblue", {{ (int $total) }}, {{ (int $total) }});
+addBall("lightblue", {{ (int $total) }},50000000, "總資產");
 
 document.addEventListener("DOMContentLoaded",function(){
    // if(DrawChart) DrawChart();
