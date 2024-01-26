@@ -1,0 +1,59 @@
+[
+{
+   "bank": "土地銀行房貸",
+   "account": "004-568-400-015-600",
+   "rate": "1.26200%",
+   "total": 658889,
+   "period": 240,
+   "year": 20,
+   "start": "2019-07-18",
+   "end": "2029-02-18",
+   "details": [
+   ]
+},
+{
+   "bank": "土銀政府優惠房貸",
+   "account": "004-5619-0005-3000",
+   "rate": "2.06000%",
+   "total": 260633,
+   "period": 240,
+   "year": 20,
+   "start": "2019-07-18",
+   "end": "2029-02-18",
+   "details": [
+   ]
+},
+{
+   "bank": "土地銀行增貸",
+   "account": "004-1601-0032-0000",
+   "rate": "2.15%",
+   "total": 2800000,
+   "period": 240,
+   "year": 20,
+   "start": "2022-12-28",
+   "end": "2042-12-28",
+   "details": [
+      { "date": "2023-01-28", "period": "1", "principal": 9473, "interest": 4725, "total": 14198 },
+      { "date": "2023-02-28", "period": "2", "principal": 9489, "interest": 4709, "total": 14198 },
+      { "date": "2023-03-28", "period": "3", "principal": 9505, "interest": 4693, "total": 14198 },
+      { "date": "2023-04-28", "period": "4", "principal": 9242, "interest": 4956, "total": 14198 },
+      { "date": "2023-05-28", "period": "5", "principal": 9414, "interest": 4949, "total": 14363 },
+      { "date": "2023-06-28", "period": "6", "principal": 9431, "interest": 4932, "total": 14363 },
+      { "date": "2023-07-28", "period": "7", "principal": 9448, "interest": 4915, "total": 14363 },
+      { "date": "2023-08-28", "period": "8", "principal": 9465, "interest": 4898, "total": 14363 }
+   ] 
+},
+{
+   "bank": "國泰銀行",
+   "account": "",
+   "rate": "1.88%",
+   "total": 1100000,
+   "period": 84,
+   "year": 7,
+   "start": "2023-08-24",
+   "end": "",
+   "details": [ 
+      { "date": "2023-08-24", "period": "1", "principal": 12230, "interest": 1756, "total": 13986 }
+   ]
+}
+]

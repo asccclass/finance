@@ -3,21 +3,21 @@ This is a {{ .Params.submenu }} test
 <aside>
    <div class="toggle">
       <div class="logo">
-         <img src="images/logo.png">
+         <img src="/images/logo.png">
          <h2>My<span class="danger">Finance</span></h2>
       </div>
       <div class="close" id="close-btn">
-         <span class="material-icons-sharp"> 關閉 </span>
+         <span class="material-icons-sharp"> close </span>
       </div>
    </div>
-
+{{ $s := .Params.selectedmenu }}
    <div class="sidebar">
       {{ range .Site.Menus.main }}
-         <a href="{{ .URL }}">
-            {{ if .Pre }}
+         {{ $text := print .Name | safeHTML }}
+         <a href="{{ .URL }}" class="{{ cond (eq $s $text) "active" ""}}">
+         {{ if .Pre }}
             <span class="material-icons-sharp">{{ .Pre }}</span>
-            {{ end }}
-            {{ $text := print .Name | safeHTML }}
+         {{ end }}
             <h3>{{ $text }}</h3>
          </a>
       {{ end }}

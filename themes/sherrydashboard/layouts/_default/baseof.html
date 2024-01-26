@@ -7,10 +7,12 @@
       <!-- Main Content -->
       <main>
          {{- block "main" . }}{{- end }}
+         {{ if eq .Type "post" }} {{- partial "some-partial.html" . -}} {{ end }}
       </main>
       <!-- End of Main Content -->
       <!-- Right Section -->
       <div class="right-section">
+         {{- partial "righttopnav.html" . -}}
          {{- partial "rightsection.html" . -}}
       </div>
    </div>

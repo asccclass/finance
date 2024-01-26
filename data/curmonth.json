@@ -1,0 +1,80 @@
+{
+   "month": "08",
+   "income": {
+      "total":  275747,
+      "increase": "+ 25.4%",
+      "summary": [
+         {
+            "title":"投資",
+            "total":32250,
+            "detail":[
+               {
+                  "datez":"2023-08-02",
+                  "title":"美債劵收入",
+                  "cnt":32250,
+                  "account":"投資",
+                  "subAccount":"債劵"
+               }
+            ]
+         },
+         {
+            "title":"保險",
+            "total":75000,
+            "detail":[
+               {
+                  "datez":"2023-08-12",
+                  "title":"臺銀人壽生存保險金",
+                  "cnt":75000,
+                  "account":"保險",
+                  "subAccount":"生存金"
+               }
+            ]
+         },
+         {
+            "title":"薪水",
+            "total":82863,
+            "detail":[
+               {
+                  "datez":"2023-08-01",
+                  "title":"中研院薪水",
+                  "cnt":66233,
+                  "account":"薪水",
+                  "subAccount":"中研院"
+               },
+               {
+                  "datez":"2023-08-01",
+                  "title":"工作津貼",
+                  "cnt":16630,
+                  "account":"薪水",
+                  "subAccount":"工作津貼"
+               }
+            ]
+         },
+         {
+            "title":"房租",
+            "total":20237,
+            "detail":[
+               {
+                  "datez":"2023-08-01",
+                  "title":"福德街房租",
+                  "cnt":20237,
+                  "account":"房租",
+                  "subAccount":"福德街"
+               }
+            ]
+         }
+      ]
+   },
+   "expense": {
+      "total": 102816,
+      "increase": "- 79.6%",
+      "summary": [
+      ]
+   },
+   "balance": {  
+      "total": "",
+      "inclase": "",
+      "summary": [
+      ]
+   }
+}

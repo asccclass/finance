@@ -1,1 +1,25 @@
+
 <div class="" style="align:center">copyright 2023. By Liu Chih Han</div>
+<script>
+document.body.addEventListener('htmx:load', function(evt) {  // HTMX 載入事件
+   const queryString = window.location.search;
+   const urlParams = new URLSearchParams(queryString);
+   const token = urlParams.get('code');
+   $.ajax({
+      type :"GET",
+      url  : "https://www.justdrink.com.tw/weareparents/line/me",
+      data : { 
+         accesstoken: token,                            
+      },
+      dataType: "text",
+      success : function(res) {
+         console.log(res);
+      }
+   });
+});
+
+document.body.addEventListener('htmx:configRequest', function(evt) {  // 送出任何AJAX命令前
+   // evt.detail.parameters['auth_token'] = getAuthToken(); // add a new parameter into the request
+   // evt.detail.headers['Authentication-Token'] = getAuthToken(); // add a new header into the request
+});
+</script>

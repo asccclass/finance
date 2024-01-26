@@ -1,12 +1,14 @@
 {{ define "main" }}
-   <h1>{{.Title}} (default template)</h1>
+{{ $curIncome := $.Site.Data.curmonth.income }}
+{{ $curIncomelen := $curIncome | len }}
+   <h1>{{.Title}}</h1>
    <!-- Analyses -->
    <div class="analyse">
       <div class="sales">
          <div class="status">
            <div class="info">
-              <h3>Total Sales</h3>
-              <h1>$65,024</h1>
+              <h3>收入</h3>
+              <h1>{{ index $curIncome $curIncomelen }}</h1>
            </div>
            <div class="progresss">
               <svg>
@@ -50,12 +52,28 @@
             </div>
          </div>
       </div>
+      <div class="sales">
+         <div class="status">
+           <div class="info">
+              <h3>Total Sales</h3>
+              <h1>$65,024</h1>
+           </div>
+           <div class="progresss">
+              <svg>
+                <circle cx="38" cy="38" r="36"></circle>
+              </svg>
+              <div class="percentage">
+                 <p>+81%</p>
+              </div>
+           </div>
+         </div>
+      </div>
    </div>
    <!-- End of Analyses -->
    <!-- New Users Section -->
    <div class="new-users">
-      <h2>New Users</h2>
-      <div class="user-list">
+      <h2>月分配項目</h2>
+                <div class="user-list">
                     <div class="user">
                         <img src="images/profile-2.jpg">
                         <h2>Jack</h2>
@@ -76,26 +94,26 @@
                         <h2>More</h2>
                         <p>New User</p>
                     </div>
-      </div>
+                </div>
    </div>
    <!-- End of New Users Section -->
    <!-- Recent Orders Table -->
    <div class="recent-orders">
-      <h2>Recent Orders</h2>
-      <table>
-         <thead>
-            <tr>
-               <th>Course Name</th>
-               <th>Course Number</th>
-               <th>Payment</th>
-               <th>Status</th>
-               <th></th>
-            </tr>
-         </thead>
-         <tbody></tbody>
-      </table>
-      <a href="#">Show All</a>
+               {{.Content}}
+                <h2>Recent Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Course Number</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <a href="#">Show All</a>
    </div>
-   {{.Content}}
    <!-- End of Recent Orders -->
 {{ end }}

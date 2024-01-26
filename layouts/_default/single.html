@@ -1,0 +1,4 @@
+{{ define "main" }}
+   {{ $text := print .Content | safeHTML }}
+   {{ $text }}
+{{ end }}
